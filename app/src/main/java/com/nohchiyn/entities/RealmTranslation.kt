@@ -1,24 +1,25 @@
 package com.nohchiyn.entities
 
-import io.realm.RealmObject
-import io.realm.annotations.PrimaryKey
-import io.realm.annotations.RealmClass
+import io.realm.kotlin.types.RealmInstant
+import io.realm.kotlin.types.RealmObject
+import io.realm.kotlin.types.annotations.PersistedName
+import io.realm.kotlin.types.annotations.PrimaryKey
 import java.util.*
 
-@RealmClass(name = "Translation")
-open class RealmTranslation : RealmObject() {
+@PersistedName("Translation")
+open class RealmTranslation() : RealmObject {
 
     private var _content: String? = null
 
     @PrimaryKey
     var translationId: String? = null
-    var realmEntry: RealmEntry = RealmEntry()
-    var realmUser: RealmUser = RealmUser()
+    var realmEntry: RealmEntry? = RealmEntry()
+    var realmUser: RealmUser? = RealmUser()
     var notes: String? = null
     var rate: Int = 0
     var languageCode: String? = null
-    var createdAt: Date = Date()
-    var updatedAt: Date = Date()
+    var createdAt: RealmInstant = RealmInstant.now()
+    var updatedAt: RealmInstant = RealmInstant.now()
 
     var content: String?
         get() = _content

@@ -13,9 +13,11 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.nohchiyn.databinding.ActivityMainBinding
 import com.nohchiyn.entities.RealmChangeSet
+import com.nohchiyn.entities.RealmEntry
 import com.nohchiyn.services.FileService
-import io.realm.Realm
-import io.realm.RealmConfiguration
+import io.realm.kotlin.Realm
+import io.realm.kotlin.RealmConfiguration
+import io.realm.kotlin.query.RealmResults
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,24 +51,30 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         fileService = FileService(this);
-        fileService.deployLocalDatabase();
+//        fileService.deployLocalDatabase();
 
         // Setup local database access
+        val config = RealmConfiguration.Builder(
+            schema = setOf(
+                RealmChangeSet::class,
+                RealmEntry::class
+            )
+        ).schemaVersion(17).name("local.datx").build()
 
-        Realm.init(this)
-        val config = RealmConfiguration.Builder()
-            .schemaVersion(18)
-            .name("local.datx")
-            .build()
-        Realm.setDefaultConfiguration(config)
+        val realm: Realm = Realm.open(config)
 
-        Realm.getDefaultInstance().use { realm ->
+        val test = RealmChangeSet();
 
-            val result = realm.where(RealmChangeSet::class.java).findAll();
-            val e1 = result.get(1);
-            val e2 = 123;
+        realm.writeBlocking {
+            copyToRealm(test.apply {
+                changeSetIndex = 1;
+                recordId = "asdfdsf";
+            })
         }
 
+        // all items in the realm
+        val changeSets: RealmResults<RealmChangeSet> = realm.query<RealmChangeSet>(RealmChangeSet::class, "ChangeSetIndex == 1").find()
+        val index = changeSets.get(1).changeSetIndex;
 
     }
 

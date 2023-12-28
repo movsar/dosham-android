@@ -1,21 +1,22 @@
 package com.nohchiyn.entities
 
-import io.realm.RealmObject
-import io.realm.annotations.PrimaryKey
-import io.realm.annotations.RealmClass
+import io.realm.kotlin.types.RealmInstant
+import io.realm.kotlin.types.RealmObject
+import io.realm.kotlin.types.annotations.PersistedName
+import io.realm.kotlin.types.annotations.PrimaryKey
 import java.util.*
 
-@RealmClass(name = "Sound")
-open class RealmSound : RealmObject() {
+@PersistedName("Sound")
+open class RealmSound() : RealmObject {
 
     @PrimaryKey
     var soundId: String? = null
-    var realmUser: RealmUser = RealmUser()
-    var realmEntry: RealmEntry = RealmEntry()
+    var realmUser: RealmUser? = RealmUser()
+    var realmEntry: RealmEntry? = RealmEntry()
     var fileName: String = ""
 
-    var createdAt: Date = Date()
-    var updatedAt: Date = Date()
+    var createdAt: RealmInstant = RealmInstant.now()
+    var updatedAt: RealmInstant = RealmInstant.now()
 
     var rate: Int = 0
 }

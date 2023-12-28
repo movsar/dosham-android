@@ -1,11 +1,13 @@
 package com.nohchiyn.entities
-import io.realm.RealmObject
-import io.realm.annotations.PrimaryKey
-import io.realm.annotations.RealmClass
+
+import io.realm.kotlin.types.RealmInstant
+import io.realm.kotlin.types.RealmObject
+import io.realm.kotlin.types.annotations.PersistedName
+import io.realm.kotlin.types.annotations.PrimaryKey
 import java.util.*
 
-@RealmClass(name = "ChangeSet")
-open class RealmChangeSet : RealmObject() {
+@PersistedName("ChangeSet")
+open class RealmChangeSet() : RealmObject {
 
     @PrimaryKey
     var changeSetIndex: Long = 0
@@ -15,6 +17,6 @@ open class RealmChangeSet : RealmObject() {
     var recordChanges: String? = null
     var recordType: Int = 0
     var operation: Int = 0
-    var createdAt: Date = Date()
+    var createdAt: RealmInstant = RealmInstant.now()
 
 }
