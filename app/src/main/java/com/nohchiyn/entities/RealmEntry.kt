@@ -3,36 +3,29 @@ package com.nohchiyn.entities
 import io.realm.kotlin.ext.realmListOf
 import io.realm.kotlin.types.RealmList
 import io.realm.kotlin.types.RealmObject
+import io.realm.kotlin.types.annotations.Ignore
 import io.realm.kotlin.types.annotations.PersistedName
 import io.realm.kotlin.types.annotations.PrimaryKey
 
 @PersistedName("Entry")
 open class RealmEntry() : RealmObject {
-    private var _content: String? = null
-
     @PrimaryKey
-    var entryId: String = ""
+    var EntryId: String? = ""
+    var ParentEntryId: String? = null
+    var User: RealmUser? = null
+    var Source: RealmSource? = null
+    var Type: Int = 0
+    var Subtype: Int = 0
+    var Rate: Int = 0
 
-    var parentEntryId: String? = null
-    var user: RealmUser? = RealmUser()
-    var source: RealmSource? = RealmSource()
-    var type: Int = 0
-    var subtype: Int = 0
-    var rate: Int = 0
+    var Content: String? = ""
 
-    var content: String?
-        get() = _content
-        set(value) {
-            _content = value
-            rawContents = if (value.isNullOrEmpty()) null else value.toLowerCase()
-        }
-
-    var rawContents: String? = null
+    var RawContents: String? = null
         private set
 
-    var details: String? = null
-    var createdAt: Long = 0
-    var updatedAt: Long = 0
-    var sounds: RealmList<RealmSound> = realmListOf()
-    var translations: RealmList<RealmTranslation> = realmListOf()
+    var Details: String? = null
+    var CreatedAt: Long = 0
+    var UpdatedAt: Long = 0
+    var Sounds: RealmList<RealmSound> = realmListOf()
+    var Translations: RealmList<RealmTranslation> = realmListOf()
 }

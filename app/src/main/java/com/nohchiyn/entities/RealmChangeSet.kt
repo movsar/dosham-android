@@ -7,16 +7,16 @@ import io.realm.kotlin.types.annotations.PrimaryKey
 import java.util.*
 
 @PersistedName("ChangeSet")
-open class RealmChangeSet() : RealmObject {
 
+open class RealmChangeSet() : RealmObject {
     @PrimaryKey
-    var changeSetIndex: Long = 0
-    var changeSetId: String? = null
-    var userId: String? = null
-    var recordId: String? = null
-    var recordChanges: String? = null
-    var recordType: Int = 0
-    var operation: Int = 0
-    var createdAt: RealmInstant = RealmInstant.now()
+    var ChangeSetIndex: Long = 0
+    var ChangeSetId: String? = null
+    var UserId: String? = null
+    var RecordId: String? = null
+    var RecordChanges: String? = null
+    var RecordType: Int = 0
+    var Operation: Int = 0
+    var CreatedAt: RealmInstant = RealmInstant.now()
 
 }

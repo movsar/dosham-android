@@ -9,17 +9,16 @@ import java.util.*
 
 @PersistedName("Source")
 open class RealmSource() : RealmObject{
-
     @PrimaryKey
-    var sourceId: String? = null
-    var realmUser: RealmUser? = null
-    var name: String = ""
-    var notes: String? = null
-    var createdAt: RealmInstant = RealmInstant.now()
-    var updatedAt: RealmInstant = RealmInstant.now()
-    var entries: RealmList<RealmEntry> = realmListOf()
+    var SourceId: String? = null
+    var User: RealmUser? = null
+    var Name: String? = ""
+    var Notes: String? = null
+    var CreatedAt: RealmInstant = RealmInstant.now()
+    var UpdatedAt: RealmInstant = RealmInstant.now()
+    var Entries: RealmList<RealmEntry> = realmListOf()
 
-    val userId: String?
-        get() = realmUser?.id
+    val UserId: String?
+        get() = User?.Id
 
 }

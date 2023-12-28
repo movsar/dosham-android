@@ -14,6 +14,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nohchiyn.databinding.ActivityMainBinding
 import com.nohchiyn.entities.RealmChangeSet
 import com.nohchiyn.entities.RealmEntry
+import com.nohchiyn.entities.RealmSound
+import com.nohchiyn.entities.RealmSource
+import com.nohchiyn.entities.RealmTranslation
+import com.nohchiyn.entities.RealmUser
 import com.nohchiyn.services.FileService
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
@@ -51,31 +55,38 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         fileService = FileService(this);
-//        fileService.deployLocalDatabase();
+        fileService.deployLocalDatabase();
 
         // Setup local database access
         val config = RealmConfiguration.Builder(
             schema = setOf(
                 RealmChangeSet::class,
-                RealmEntry::class
+                RealmEntry::class,
+                RealmSource::class,
+                RealmSound::class,
+                RealmUser::class,
+                RealmTranslation::class,
             )
-        ).schemaVersion(17).name("local.datx").build()
+        ).schemaVersion(18).name("local.datx").build()
 
         val realm: Realm = Realm.open(config)
 
-        val test = RealmChangeSet();
-
-        realm.writeBlocking {
-            copyToRealm(test.apply {
-                changeSetIndex = 1;
-                recordId = "asdfdsf";
-            })
-        }
+//        realm.writeBlocking {
+//            val test = RealmChangeSet();
+//            copyToRealm(test.apply {
+//                changeSetIndex = 2;
+//                recordId = "asdfdsf";
+//            })
+//        }
 
         // all items in the realm
-        val changeSets: RealmResults<RealmChangeSet> = realm.query<RealmChangeSet>(RealmChangeSet::class, "ChangeSetIndex == 1").find()
-        val index = changeSets.get(1).changeSetIndex;
+        val entries: RealmResults<RealmEntry> = realm.query(RealmEntry::class).find();
+        val first = entries.get(0).Content;
+        val changeSets: RealmResults<RealmChangeSet> =
+            realm.query<RealmChangeSet>(RealmChangeSet::class, ).find()
+        val index = changeSets.get(1).ChangeSetIndex;
 
+        val a = 3;
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

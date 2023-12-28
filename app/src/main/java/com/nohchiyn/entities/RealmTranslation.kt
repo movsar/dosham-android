@@ -8,44 +8,18 @@ import java.util.*
 
 @PersistedName("Translation")
 open class RealmTranslation() : RealmObject {
-
-    private var _content: String? = null
-
     @PrimaryKey
-    var translationId: String? = null
-    var realmEntry: RealmEntry? = RealmEntry()
-    var realmUser: RealmUser? = RealmUser()
-    var notes: String? = null
-    var rate: Int = 0
-    var languageCode: String? = null
-    var createdAt: RealmInstant = RealmInstant.now()
-    var updatedAt: RealmInstant = RealmInstant.now()
+    var TranslationId: String? = null
+    var Entry: RealmEntry? = null
+    var User: RealmUser? = null
+    var Notes: String? = null
+    var Rate: Int = 0
+    var LanguageCode: String? = null
+    var CreatedAt: RealmInstant = RealmInstant.now()
+    var UpdatedAt: RealmInstant = RealmInstant.now()
 
-    var content: String?
-        get() = _content
-        set(value) {
-            _content = value
-            rawContents = if (value.isNullOrEmpty()) null else value.toLowerCase()
-        }
-
-    var rawContents: String? = null
+    var Content: String? = ""
+    var RawContents: String? = null
         private set
 
-    companion object {
-//        fun fromModel(dto: TranslationModel): RealmTranslation {
-//            val translation = RealmTranslation()
-//
-//            translation.translationId = dto.translationId
-//            translation.entry = RealmEntry.fromModel(dto.entry)
-//            translation.user = RealmUser.fromModel(dto.user)
-//            translation.content = dto.content
-//            translation.notes = dto.notes
-//            translation.rate = dto.rate
-//            translation.languageCode = dto.languageCode
-//            translation.createdAt = dto.createdAt
-//            translation.updatedAt = dto.updatedAt
-//
-//            return translation
-//        }
-    }
 }

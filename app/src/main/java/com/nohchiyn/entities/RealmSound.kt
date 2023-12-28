@@ -10,13 +10,13 @@ import java.util.*
 open class RealmSound() : RealmObject {
 
     @PrimaryKey
-    var soundId: String? = null
-    var realmUser: RealmUser? = RealmUser()
-    var realmEntry: RealmEntry? = RealmEntry()
-    var fileName: String = ""
+    var SoundId: String? = null
+    var User: RealmUser? = null
+    var Entry: RealmEntry? = null
+    var FileName: String? = ""
 
-    var createdAt: RealmInstant = RealmInstant.now()
-    var updatedAt: RealmInstant = RealmInstant.now()
+    var CreatedAt: RealmInstant = RealmInstant.now()
+    var UpdatedAt: RealmInstant = RealmInstant.now()
 
-    var rate: Int = 0
+    var Rate: Int = 0
 }
