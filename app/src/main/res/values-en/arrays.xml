@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="CatArray">
+        <item>General Vocabulary</item>
+        <item>Requests and help</item>
+        <item>Dating</item>
+        <item>Wishes</item>
+        <item>Business relationship</item>
+        <item>Poems and Songs</item>
+        <item>Quotes and sayings</item>
+        <item>Geographical names</item>
+        <item>Science and Technology</item>
+        <item>Dictionary</item>
+        <item>Legal terms</item>
+        <item>Mathematical terms</item>
+        <item>Anatomical terms</item>
+    </string-array>
+
+    <string-array name="CatValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="arr_languages">
+        <item>English</item>
+        <item>Arabic</item>
+        <item>Bengal</item>
+        <item>Georgian</item>
+        <item>Ingush</item>
+        <item>Spanish</item>
+        <item>Kalmuck</item>
+        <item>Chinese</item>
+        <item>Korean</item>
+        <item>Lezgin</item>
+        <item>German</item>
+        <item>Netherlandish</item>
+        <item>Norse</item>
+        <item>Persian</item>
+        <item>Portuguese</item>
+        <item>Russian</item>
+        <item>Tatar</item>
+        <item>Uzbek</item>
+        <item>French</item>
+        <item>Hindi</item>
+        <item>Chechen</item>
+        <item>Japanese</item>
+        <item>Latin</item>
+    </string-array>
+    <string-array name="LanguageArray">
+        <item>Chechen</item>
+        <item>Russian</item>
+        <item>English</item>
+        <item>Arabic</item>
+    </string-array>
+    <string-array name="LanguageValues">
+        <item>ce</item>
+        <item>ru</item>
+        <item>en</item>
+        <item>ar</item>
+    </string-array>
+
+    <string-array name="ActionsArray">
+        <item>Go to phrase</item>
+        <item>Nothing</item>
+    </string-array>
+    <string-array name="ActionsValues">
+        <item>goto_phrase</item>
+        <item>nothing</item>
+    </string-array>
+    <string-array name="ThemesArray">
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <string-array name="ThemesValues">
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <string-array name="InternetAccessArray">
+        <item>Slow Internet</item>
+        <item>Normal Internet</item>
+    </string-array>
+    <string-array name="InternetAccessValues">
+        <item>10000</item>
+        <item>5000</item>
+    </string-array>
+    <string-array name="TranslitOptionsArray">
+        <item>Turn off</item>
+        <item>Only for Chechen phrases</item>
+        <item>For everything</item>
+    </string-array>
+    <string-array name="TranslitOptionsValues">
+        <item>off</item>
+        <item>che</item>
+        <item>everything</item>
+    </string-array>
+
+    <string-array name="OrientArray">
+        <item>Portrait</item>
+        <item>Landscape</item>
+    </string-array>
+    <string-array name="OrientValues">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

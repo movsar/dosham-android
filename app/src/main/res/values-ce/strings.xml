@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--
+Выражение = Алар
+Запрос = Дехар
+Перевод = Гоч
+Текст для перевода = Оригинал
+-->
+
+    <string name="app_name">Нохчийн Меттан Дошам</string>
+    <string name="prefs_show_on_start">Х1орраза нисделла аларш гайта</string>
+    <string name="prefs_load_randoms">Нисделла аларш</string>
+
+	<string name="translate">Гоч де</string>
+    <string name="vector">Гоч даран кеп</string>
+    <string name="cheru">Нохчийн - Оьрсийн</string>
+    <string name="ruche">Оьрсийн - Нохчийн</string>	
+    <string-array name="napr">
+        <item>Оьрсийн - Нохчийн</item>
+        <item>Нохчийн - Оьрсийн</item>
+    </string-array>
+    <string name="not_found">Х1умма а ца карийна</string>
+    <string name="exit">Д1акъовла</string>
+    <string name="desc">Нохчийн Меттан Дошам\n\n\nПрограммичохь лелийна Мациев А.Г. дошамаш.\n\nКхин йолу программашка хьовса http://nohchiyn-mott.com сайтан т1ехь\n\nCopyright © 2012 - 2014 Movsar Bekaev</string>
+
+    <string name="please_wait_while_its_starts">Хьалалатталц собар де..</string>
+	
+    <string name="purchase">Реклама д1аяккхар</string>
+    <string name="about">Программах лаьцна..</string>
+    <string name="ads">Реклама</string>
+    <string name="help">Г1о</string>
+
+    <string name="show_latest_phrases">Т1еххьарлераниш</string>
+	<string name="lastTranslated">Т1еххьара гоч динарш</string>
+    <string name="show_random_nt_phrases">Гочданза дерш</string>
+    <string name="show_random_wt_phrases">Гочдина дерш</string>
+	
+    <string name="show">Схьагайта:</string>
+
+    <string name="search_cond">Лехаман некъаш</string>
+    <string name="is_it_improper_phrase">Х1ара алар д1адаккха деза аьлла хетий хьуна?</string>
+    <string name="yes">Х1аъ</string>
+    <string name="no">Х1ан-х1а</string>
+    <string name="no_translation">[Суна гоч хаъ!]</string>
+    <string name="edit_translation">Гоч нисдар</string>
+	<string name="please_wait_while_request_will_complete">Хьалхалера г1уллакх чеккхдаллалц собар дайта!</string>
+	<string name="edit_phrase">Алар хийцар</string>    
+    <string name="cancel">Д1аяккха</string>
+    <string name="new_phrase">Керла алар</string>
+    <string name="req_successful">Дехар чекхдели</string>
+    <string name="req_crash">Дехар дарца г1алат даьлла</string>
+    <string name="please_wait">Цхьажимма собар делахь..</string>
+    <string name="thank_you">Баркалла!</string>
+	
+    <string name="phrase_add">Керла Алар</string>
+    <string name="offline">Дошам</string>
+    <string name="phrases">Аларш</string>
+    <string name="input_words_to_find">Хьайна хатта луарг чуязде</string>
+    <string name="samples">Масаллаш</string>
+  
+    <string name="hint_input_word">Хьайна хатта луарг чуязде</string>
+    <string name="hint_txtRuWord">Оьрсийн маттахь</string>
+    <string name="hint_txtChechen">Нохчийн маттахь</string>
+    <string name="msg_thanks_for_translation">Баркалла!</string>
+
+    <string name="add_word">Керла дош</string>
+    <string name="header_declensions">Легарш</string>
+
+
+
+    <string name="fix_edit">Алар нисдар:</string>
+	<string name="myphrases">Сан хаттарш</string>
+    <string name="hint_choose_browser">Хьа стенца йоьллу?</string>
+    <string name="mnu_our_site">Сайт</string>
+    <string name="mnu_settings">Х1иттамаш</string>
+
+    <string name="select_text_size">Текстан барам харжа</string>
+    <string name="text_size">Текстан барам</string>
+    <string name="size">Барам</string>
+    <string name="color">Бос</string>
+
+    <string name="settings_reset">Х1иттамаш ц1анйе</string>
+    <string name="settings_resetted">Х1иттамаш ц1анйина!</string>
+
+    <string name="buttons_random_word">Ларамаза дош</string>
+
+    <string name="language">Мотт</string>
+    <string name="set_ui_language">Мотт харжа</string>
+    <string name="ui_language">Интерфейсан мотт</string>
+    <string name="after_restart">Мотт хийцабалийта, программа юхалатайе</string>
+
+    <string name="phrase_addnew">Гоч дан дезаш йолу текст чуязйе</string>
+    <string name="translate_to">Муьлхачу матте даккха деза:</string>
+    <string name="russian">Оьрсийн</string>
+    <string name="chechen">Нохчийн</string>
+    <string name="english">Ингалс</string>
+
+    <string name="add_translation">Гоч дар</string>
+    <string name="i_know_translation">Суна гоч хаъ</string>
+    <string name="incorrect_vector">Гоч даран кеп нийса хаьржина яц</string>
+    <string name="not_enough_long">Хьо гоч дан г1ерта текст дукха йоцу ю</string>
+
+    <string name="btns_text_color">Нуьйдарчийна текстан бос</string>
+    <string name="select_btns_text_color">Нуьйдарчийна текстан бос харжа</string>
+
+    <string name="hint_input_here_to_be_translated">Гоч дан дезаш дерг кхуза чуязде</string>
+    <string name="hint_input_here_translation">Хьайн гоч хаахь, иза кхуза язде</string>
+    <string name="translate_from">Ахь муьлхачу маттахь яздина?</string>
+ 
+    <string name="translations_history">Гоч даран истори</string>
+    <string name="user">Декъашхо</string>
+    <string name="no_translations_created">Истори т1епаз йайна..</string>
+
+
+  
+    <string name="save">Д1аязде</string>
+    <string name="audio">Аудио</string>
+
+    <string name="rec_start">Д1аяздар доладе</string>
+    <string name="rec_stop">Д1аяздар сацаде</string>
+    <string name="time_null">00:00</string>
+
+    <string name="rec_options">Аудиофайл яазъяр</string>
+    <string name="recorded_files">Йолуш йолу аудиофайлаш</string>
+    <string name="upload_recording_or_not">Алар диконца д1адаздина, т1еч1аг1дой иза? Ахь х1инцале яздина хиллехь, керланиг цунна т1ехула дазор ду</string>
+
+
+    <string name="ransw_audio_rec_ok">Аудиофайл диконца д1аязъелла!</string>
+    <string name="ransw_audio_rec_fail">Аудиофайл язъеш г1алат даьлла!</string>
+    <string name="ransw_audio_rec_already_has">Ахь х1инцале а язйина кху аларан аудиофайл</string>
+    <string name="ransw_audio_rec_rewrited">Аудиофайл диконца карлаяьккхина!</string>
+    <string name="ransw_audio_rec_how_to">Хезаш алар д1аязъяр\nЛаахь аудиофайл язйе, [Д1аяздар доладе] аьлла йолу кнопка т1е а та1аяй!</string>
+
+
+    <string name="rec_no_phrase_or_translation">Гоч я, гоч дан дезаш дерг чу ца яздина ахь</string>
+    <string name="rec_access_denied">Аудиофайлаш язъян бакъонаш яц хьан, пайда баккха лууш велахь, авторан почти т1е язде</string>
+
+    <string name="close">Д1акъовла</string>
+    <string name="clearcache">Кэш ц1анйе</string>
+    <string name="rec_cache_cleaned">Кэш ц1анъяр чекхдели!</string>
+    <string name="ok">OK</string>
+    <string name="file_downloaded">Алар чудаьккхина</string>
+    <string name="err_when_downloading">Алар чудоккхуш г1алат даьлла</string>
+    <string name="phrase_added">Алар д1адаздина</string>
+    <string name="wait">Собар..!</string>
+
+    <string name="hint_rutext">На русском</string>
+    <string name="hint_engtext">In english</string>
+	<string name="hint_nohtext">Нохчийн маттахь</string>
+    <string name="header_plural">Дукхаллин терахь</string>
+
+    <string name="next">Кхин д1а</string>
+    <string name="maybe_there_is_already_answered">Х1инцале жоп делла хила мега ахь хоьттучу х1уманна, цундела цкъа кхарна юкъахь карадой хьажа</string>
+
+    <string name="phrase_on_moderation">Хьан алар д1аяздина, амма цкъа модераторш тидамбинчулла т1ехьа бен нахана гучудера дац иза.</string>
+    <string name="moderation">Модераци</string>
+    <string name="access_denied">Хьан бакъонаш ца тоьу иза дан!</string>
+
+    <string name="title_activity_get_mod">Модератор хила!</string>
+    <string name="hello_world">Марша да хьо дуьне!</string>
+    <string name="action_settings">Х1иттамаш</string>
+    <string name="get_mod">Къастийначу текстан нохчийн маттахь долу маьрша гоч язде, цул т1аьхьа "Д1аяздар доладе" т1е а та1адай, деша яздинарг</string>
+    <string name="txt_to_write">Маршалла хуьлда! Суна модератор хила лаьа, кху приложенин г1о дан а, нохчийн мотт баржабан а. Аса нийса дерг бен яз а дийр дац, хьашт доцург а лелор дац сайн даржица.</string>
+    <string name="send">Д1адахьийта</string>
+
+    <string name="file_downloading">Файл чоьхьайоккхуш ю, собар де</string>
+    <string name="translation_direction">Гочдаран Вектор</string>
+    <string name="sort_options">Кечъяран Метод</string>
+
+    <string name="sort_alphabetical">Алфавитца</string>
+    <string name="sort_date">Хенаца</string>
+    <string name="sort_phrase_lenght">Оригиналан барамца</string>
+    <string name="sort_translation_lenght">Гочдиначунна барамца</string>
+
+    <string name="search_method">Лехаман Метод</string>
+    <string name="direct">Нисса-д1а</string>
+    <string name="recursive">Юханехьа</string>
+
+    <string name="search_objects">Лехаман Объекташ</string>
+    <string name="words">Дешнаш</string>
+    <string name="search_settings">Лехаман Х1иттамаш</string>
+
+    <string name="now_you_are_online">Х1инца ахьа онлайн д1ах1оттам хаьржина</string>
+    <string name="now_you_are_offline">Х1инца ахьа оффлайн д1ах1оттам хаьржина</string>
+    <string name="for_this_you_need_online_mode">Цу г1уллакхан онлайн кеп летта хила еза</string>
+
+    <string name="not_connected">Интернет яц, хьай з1ене тидам бе</string>
+
+    <string name="choose_at_least_one_method">Цхьаъ мукъан лехаман кеп харжа</string>
+    <string name="choose_at_least_one_search_pattern">Аларш, я дешнаш, цхьаъ къастаде</string>
+
+    <string name="app_actions">Хьажо меттиг</string>
+    <string name="what_to_do_after_edit">Алар хийцича</string>
+    <string name="what_to_do_after_edit_summary">Алар хийцича хьажо меттиг харжа</string>
+	
+	<string name="profile">Профиль</string>
+    <string name="user_profile">Декъашхочунна профиль</string>
+    <string name="user_id">Хьан ID</string>
+    <string name="name">Ц1е</string>
+    <string name="user_name_hint">Хьан декъашхочунна ц1е язйе</string>
+    <string name="user_password">Тешаман дош</string>
+    <string name="user_password_hint">Хьан декъашхочунна тешаман дош дазде</string>
+    <string name="authorization">Авторизаци</string>
+    <string name="role">Роль</string>
+    <string name="gopro">Бакъонаш совъяхаран дехар</string>
+
+    <string name="user_translations_count">Гочдина аларшан барам</string>
+    <string name="user_phrases_count">Т1етоьхна аларшан барам</string>
+    <string name="user_audios_count">Аларийн аудиофайлаш</string>
+
+    <string name="getting_information">Жоп доьхуш ю</string>
+    <string name="only_latin_letters_and_digits_supported">Ингалс алфавитан элпаш а, дефис а, к1елар сиз а, терахь а бен яздан ца мега</string>
+    <string name="you_can_attach_private_login_and_password_to_your_account">Логин а, тешаман дош а х1отто йиш ю хьан хьайн аккаунтан, хьан хьалха уьш х1иттийна аккаунт хиллехь - иза меттах1отто а йиш ю, иштта цу логинца / тешаман дешца сайт а лело бакъо ю хьан.</string>
+    <string name="login">Логин</string>
+    <string name="restore">Юхаметтах1оттор</string>
+    <string name="attach">Т1еч1аг1дар</string>
+    <string name="need_restart">Хьан аккаунт юхаметтах1оттийна, х1инца программа юхалато еза</string>
+    <string name="admin">Администратор</string>
+    <string name="super_moderator">Супер-Модератор</string>
+    <string name="moderator">Модератор</string>
+    <string name="remove">Д1адоккхий?</string>
+    <string name="audio_recorded_successfully">Яздар диконца чеккхдели</string>
+
+    <string name="copy">Копи яр</string>
+    <string name="edit">Хийцар</string>
+    <string name="share">Нахал даккхар</string>
+    <string name="history">Истори</string>
+    <string name="audios">Аудиофайлаш</string>
+
+    <string name="phrase">Алар</string>
+    <string name="translation">Гоч</string>
+    <string name="phrase_copy_successfully_completed">Оригиналан копи яьккхина, иза буфер чохь ю</string>
+    <string name="translation_copy_successfully_completed">Гочанна копи яьккхина, иза буфер чохь ю</string>
+
+    <string name="main_settings">Коьрта х1иттамаш</string>
+    <string name="theme">Тема</string>
+    <string name="choose_theme">Тема харжа</string>
+
+    <string name="access_from_main">Коьрта экранчухула бен елла йиш яц</string>
+
+    <string name="update_offline_database">Оффлайн база карлаяккхар</string>
+    <string name="start_update_offline_database">Т1ета1айе, оффлайн базанна керла версеш юйла хьажа лаахь</string>
+
+    <string name="you_have_the_last_version">Хьоьгахь ерг уггаре а т1еххьарлера верси ю!</string>
+    <string name="new_version_has_been_found">Керла верси ю, чуяккха йиш йолуш, чуйоккхий? Масех минотехь 1ен мега иза и болх беш.</string>
+
+    <string name="db_updated">База карлаяккхар диконца чекхдели!</string>
+
+    <string name="search">Схьахаьржинарг лахар</string>
+
+    <string name="internet_access_speed">Интернет-з1ена сихалла</string>
+    <string name="choose_internet_access_speed">Нагахь кеста-кеста з1е хедаш хилахь, (Г1ийла интернет) аьлларг харжа</string>
+
+
+    <string name="found">Карийна</string>
+    <string name="req_successfully_done">Баркалла, дехар д1адахьийтна!</string>
+
+    <string name="ruchemaciev">А.Г. Мациеван Оьрсийн - Нохчийн дошам</string>
+    <string name="cherumaciev">А.Г. Мациеван Нохчийн - Оьрсийн дошам</string>
+    <string name="ruchemacievappendix">А.Г. Мациеван Оьрсийн - Нохчийн дошаман т1едиллар</string>
+
+    <string name="translit">Транслит</string>
+    <string name="translit_turn_on">Кириллицан меттана, транслит-кепехь гайтар</string>
+    <string name="turn_off">Д1айаккха</string>
+    <string name="translit_che">Нохчийн меттан аг1ора</string>
+    <string name="translit_everything">Массо аг1ора</string>
+
+    <string name="text">Текст</string>
+    <string name="alphabet">Алфавит</string>
+
+    <string name="backward">Т1ехьа</string>
+    <string name="forward">Кхин д1а</string>
+
+    <string name="ff_search">Леха!</string>
+    <string name="ff_filtering">Литта!</string>
+    <string name="ff_asking">Хаьтта!</string>
+    <string name="ff_translate">Гоч де!</string>
+    <string name="ff_listeming">Ладог1а!</string>
+    <string name="ff_recording">Аз де!</string>
+
+    <string name="ask">Хатта</string>
+
+    <string name="welcome_one">Марша до1гийла!</string>
+    <string name="welcome_two">70 000 алар, болх беш долу 5 шо\nБаркалла эцарна!</string>
+
+
+    <string name="ff_filtering_desc">Тайп-тайпана луьттурган кепашца нисса бе шай лехам</string>
+    <string name="ff_searching_desc">Эзаршкахь долчу нохчийн меттан аларшна а, дешнашна а юкъахь леха</string>
+    <string name="ff_asking_desc">Программичохь доцу дешнаш а, аларш а т1етоха. Оха гоч дийра ду шуна лерина.</string>
+    <string name="ff_translate_desc">Хьайн хуучуьнца кхейчарна г1о де</string>
+    <string name="ff_listening_desc">Кхечу декъашхош йаздиначу озе ладог1а</string>
+
+    <string name="ff_recording_desc">Нохчийн маттахь йолу тексташна аз йаззаде. 1амош болчарна г1о де, бакъ долчу аларан масаллашца</string>
+
+    <string name="about_alphabet">Ц1е басехь къастийна долу элпаш лела ма де, цера меттина дифтонгаш лелайе, ву - йу бохучу къасторехь атта хир ду иза т1аккха: ю - йу, я - йа, юь - йуь, яь - йаь</string>
+
+
+    <string name="choose_orientation_summary">Выберите ориентацию</string>
+    <string name="orientation">Ориентация</string>
+
+    <string name="grammar">Грамматика</string>
+
+
+    <string name="input_text_on_chechen_language">Введите сюда текст на чеченском языке</string>
+
+    <string name="phrase_already_exists">Фраза уже существует</string>
+    <string name="phrase_has_been_updated">Выражение отредактировано</string>
+
+    <string name="select_a_language">Выберите язык</string>
+
+    <string name="rs_connection_error">Ошибка соединения</string>
+    <string name="rs_no_entries">Нет результатов для отображения</string>
+    <string name="rs_ok">Ок</string>
+    <string name="rs_phrase_saved">Выражение сохранено</string>
+    <string name="rs_phrase_added">Выражение добавлено</string>
+    <string name="rs_phrase_updated">Выражение обновлено</string>
+    <string name="rs_phrase_already_exists">Выражение уже существует</string>
+    <string name="rs_phrase_rate_changed">Рейтинг выражения изменен</string>
+
+    <string name="str_delete">Удалить</string>
+    <string name="str_edit">Изменить</string>
+
+    <string name="there_is_an_translation">Перевод на этот язык уже есть, удалите его или изменить язык</string>
+    <string name="add_translations">Вы можете добавить переводы выражения нажав на нижеследующую кнопку</string>
+
+    <string name="notes">Примечание на указанном языке</string>
+    <string name="precision_level">Точность поиска</string>
+    <string name="precision_level_high">Высокая</string>
+    <string name="precision_level_normal">Средняя</string>
+    <string name="precision_level_low">Низкая</string>
+
+    <string name="prhase_added_to_moderation">Ваше выражение принято к рассмотрению, оно появится после подтверждения модератором, статус вы можете просмотреть в \'Мои Фразы\'</string>
+    <string name="input_forms">Введите формы если есть</string>
+    <string name="critical_error">Ошибка базы данных, пожалуйста переустановите приложение!</string>
+    <string name="any_official">Из Официальных Источников</string>
+    <string name="any_byusers">Из Добавленных пользователями</string>
+    <string name="added_by_users">Только Пользовательские</string>
+    <string name="che_notes">Введите примечание для выражения</string>
+
+    <string name="malaev">Малаев Д.Б. Словарь Терминов По Физической Географии</string>
+    <string name="maciev">Мациев А.Г. Нохчийн-Оьрсийн Словарь.</string>
+    <string name="geo">Словарь Географических Наименований Населенных Пунктов ЧР</string>
+    <string name="karasaev">Карасаев А.Т., Мациев А.Г. Русско-Чеченский Словарь.</string>
+    <string name="yurslovar">Абдурашидов Э.Д. Чеченско-Русский Русско-Чеченский Словарь Юридических Терминов</string>
+    <string name="anatslovar">Берсанов Р.У. Адаман Анатоми. Нохчийн-Оьрсийн, Оьрсийн-Нохчийн Словарь. Грозный, 2011.</string>
+    <string name="matslovar">Умархаджиев С.М., Ахматукаев А.А. Нохчийн-Оьрсийн, Оьрсийн-Нохчийн Математикин Терминийн Словарь. Тбилиси, 2010.</string>
+
+    <string name="old_phrases">Добавлено Пользователями</string>
+    <string name="islam">Ислам Хасаханов</string>
+    <string name="movsar">Мовсар Бекаев</string>
+    <string name="last_revision">Last.Rev:</string>
+
+</resources>

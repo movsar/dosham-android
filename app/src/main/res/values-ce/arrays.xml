@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arr_languages">
+        <item>Английский</item>
+        <item>Арабский</item>
+        <item>Бенгальский</item>
+        <item>Грузинский</item>
+        <item>Ингушский</item>
+        <item>Испанский</item>
+        <item>Калмыцкий</item>
+        <item>Китайский</item>
+        <item>Корейский</item>
+        <item>Лезгинский</item>
+        <item>Немецкий</item>
+        <item>Нидерландский</item>
+        <item>Норвежский</item>
+        <item>Персидский</item>
+        <item>Португальский</item>
+        <item>Русский</item>
+        <item>Татарский</item>
+        <item>Узбекский</item>
+        <item>Французский</item>
+        <item>Хинди</item>
+        <item>Чеченский</item>
+        <item>Японский</item>
+        <item>Латинский</item>
+    </string-array>
+    <string-array name="CatArray">
+        <item>Юкъара лексика</item>
+        <item>Дехарш а, гIо а</item>
+        <item>Цхьаьнакхетарш а, довзарш а</item>
+        <item>Лаарш</item>
+        <item>Белхан юкъаметтигаш</item>
+        <item>Байташ а, эшарш а</item>
+        <item>Цитаташ а, кицанаш а</item>
+        <item>Географин цIерш</item>
+        <item>Iилма а, Техника а</item>
+        <item>Дошам</item>
+        <item>Бакъонийн терминаш</item>
+        <item>Математикин терминаш</item>
+        <item>Анатомин терминаш</item>
+    </string-array>
+    <string-array name="CatValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="LanguageValues">
+        <item>ce</item>
+        <item>ru</item>
+        <item>en</item>
+        <item>ar</item>
+    </string-array>
+
+    <string-array name="LanguageArray">
+        <item>Нохчийн</item>
+        <item>Оьрсийн</item>
+        <item>Ингалс</item>
+        <item>1аьрбойн</item>
+    </string-array>
+    <string-array name="ActionsArray">
+        <item>Алар гайта</item>
+        <item>Х1умма ма де</item>
+
+    </string-array>
+    <string-array name="ActionsValues">
+        <item>goto_phrase</item>
+        <item>nothing</item>
+    </string-array>
+	
+	<string-array name="ThemesArray">
+        <item>Сирла</item>
+        <item>1аьржа</item>
+    </string-array>
+    <string-array name="ThemesValues">
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <string-array name="InternetAccessArray">
+        <item>Г1ийла интернет</item>
+        <item>Г1ехьа интернет</item>
+    </string-array>
+    <string-array name="InternetAccessValues">
+        <item>10000</item>
+        <item>5000</item>
+    </string-array>
+    <string-array name="TranslitOptionsArray">
+        <item>Д1айаккха</item>
+        <item>Нохчийн меттан аг1ора</item>
+        <item>Массо аг1ора</item>
+    </string-array>
+    <string-array name="TranslitOptionsValues">
+        <item>off</item>
+        <item>che</item>
+        <item>everything</item>
+    </string-array>
+
+    <string-array name="OrientArray">
+        <item>Portrait</item>
+        <item>Landscape</item>
+    </string-array>
+    <string-array name="OrientValues">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

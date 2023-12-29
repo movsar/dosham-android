@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="dynamic_style_attrs">
+
+        <!-- icon src attribute -->
+
+        <attr name="main_background_color" format="color" />
+        <attr name="main_frame_color" format="color" />
+        <attr name="main_txt_color" format="color" />
+        <attr name="main_lbl_color" format="color" />
+        <attr name="spn_color" format="color" />
+        <attr name="color_1" format="color" />
+        <attr name="color_untrusted" format="color" />
+
+        <attr name="exp_draft_phrase_color" format="color" />
+        <attr name="exp_filled_phrase_color" format="color" />
+        <attr name="ibtn_filters_image" format="reference" />
+        <attr name="ibtn_search_image" format="reference" />
+        <attr name="ibtn_refresh_image" format="reference" />
+        <attr name="ibtn_wifi_image" format="reference" />
+        <attr name="ibtn_options_image" format="reference" />
+        <attr name="ibtn_collapse_image" format="reference" />
+        <attr name="ibtn_expand_image" format="reference" />
+        <attr name="ibtn_mic_image" format="reference" />
+        <attr name="ibtn_discard_image" format="reference" />
+        <attr name="ibtn_play_image" format="reference" />
+        <attr name="ibtn_speaker_image" format="reference" />
+        <attr name="ibtn_sheet_image" format="reference" />
+        <attr name="ibtn_edit_image" format="reference" />
+        <attr name="ibtn_wifired_image" format="reference" />
+        <attr name="ibtn_accept_image" format="reference" />
+        <attr name="tv_original_textstyle" format="reference" />
+
+
+        <attr name="light_green" format="color" />
+    </declare-styleable>
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+</resources>

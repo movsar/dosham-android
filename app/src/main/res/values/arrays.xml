@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="CatArray">
+        <item>Общая лексика</item>
+        <item>Просьбы и помощь</item>
+        <item>Встречи и знакомства</item>
+        <item>Пожелания</item>
+        <item>Деловые отношения</item>
+        <item>Стихи и песни</item>
+        <item>Цитаты и пословицы</item>
+        <item>Географические названия</item>
+        <item>Наука и Техника</item>
+        <item>Словарь</item>
+        <item>Правовые термины</item>
+        <item>Математические термины</item>
+        <item>Анатомические термины</item>
+    </string-array>
+    <string-array name="CatValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="LanguageArray">
+        <item>Чеченский</item>
+        <item>Русский</item>
+        <item>Английский</item>
+        <item>Арабский</item>
+    </string-array>
+    <string-array name="LanguageValues">
+        <item>ce</item>
+        <item>ru</item>
+        <item>en</item>
+        <item>ar</item>
+    </string-array>
+
+    <string-array name="ActionsArray">
+        <item>Перейти к выражению</item>
+        <item>Ничего не делать</item>
+    </string-array>
+    <string-array name="ActionsValues">
+        <item>goto_phrase</item>
+        <item>nothing</item>
+    </string-array>
+
+    <string-array name="ThemesArray">
+        <item>Светлая</item>
+        <item>Тёмная</item>
+    </string-array>
+    <string-array name="ThemesValues">
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <string-array name="InternetAccessArray">
+        <item>Медленный Интернет</item>
+        <item>Нормальный Интернет</item>
+    </string-array>
+    <string-array name="InternetAccessValues">
+        <item>10000</item>
+        <item>5000</item>
+    </string-array>
+
+    <string-array name="TranslitOptionsArray">
+        <item>Выключить</item>
+        <item>Только чеченское направление</item>
+        <item>В обеих направлениях</item>
+    </string-array>
+    <string-array name="TranslitOptionsValues">
+        <item>off</item>
+        <item>che</item>
+        <item>everything</item>
+    </string-array>
+
+    <string-array name="arr_languages">
+        <item>Английский</item>
+        <item>Арабский</item>
+        <item>Бенгальский</item>
+        <item>Грузинский</item>
+        <item>Ингушский</item>
+        <item>Испанский</item>
+        <item>Калмыцкий</item>
+        <item>Китайский</item>
+        <item>Корейский</item>
+        <item>Лезгинский</item>
+        <item>Немецкий</item>
+        <item>Нидерландский</item>
+        <item>Норвежский</item>
+        <item>Персидский</item>
+        <item>Португальский</item>
+        <item>Русский</item>
+        <item>Татарский</item>
+        <item>Узбекский</item>
+        <item>Французский</item>
+        <item>Хинди</item>
+        <item>Чеченский</item>
+        <item>Японский</item>
+        <item>Латинский</item>
+    </string-array>
+
+
+    <string-array name="OrientArray">
+        <item>Вертикальная</item>
+        <item>Горизонтальная</item>
+    </string-array>
+    <string-array name="OrientValues">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

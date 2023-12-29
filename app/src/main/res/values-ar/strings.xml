@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">قاموس اللغة الشيشانية</string>
+    <string name="prefs_show_on_start">اظهر جملة عشوائية</string>
+    <string name="prefs_load_randoms">اظهار عشوائي</string>
+
+    <string name="translate">ترجمة</string>
+    <string name="vector">نقل الترجمة</string>
+    <string name="cheru">شيشاني - روسي</string>
+    <string name="ruche">روسي - شيشاني</string>	
+    <string-array name="napr">
+        <item>روسي - شيشاني</item>
+        <item>شيشاني روسي</item>
+    </string-array>
+    <string name="not_found">لم نجد</string>   
+    <string name="exit">اغلاق</string>
+    <string name="desc">قاموس اللغة الشيشانية\n\nتم انشائه بالاستعانة بقاموس السيد مساييف/n/nيمكنك الاستعانة بترجمات اضافية باستخدام الرابط http://nohchiyn-mott.com \n\nجميع الحقوق محفوظة © 2012 - 2014 السيد موسر بكايف </string>
+    
+    <string name="please_wait_while_its_starts">قيد التحميل الرجاء الانتظار.. </string>
+  
+    <string name="purchase">الغاء الاعلانات</string>
+    <string name="about">من نحن</string>
+    <string name="ads">اعلانات</string>
+    <string name="help">المساعدة</string>
+
+    <string name="show_latest_phrases">اظيف مؤخرا</string>
+	<string name="lastTranslated">ترجم مؤخرا</string>
+    <string name="show_random_nt_phrases">بلا ترجمة</string>
+    <string name="show_random_wt_phrases">بوجود ترجمة</string>
+	
+    <string name="show">اظهر:</string>
+	
+    <string name="search_cond">ظروف البحث</string>
+    <string name="is_it_improper_phrase">هل هذه الجملة مهمة لك؟</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="no_translation">[انا متمكن من الترجمة]</string>
+    <string name="edit_translation">تصحيح الترجمة</string>
+	<string name="please_wait_while_request_will_complete">الطلب السابق قيد التدقيق, الرجاء الانتظار</string>
+    <string name="edit_phrase">تحرير Phrase</string>  
+    <string name="cancel">الغاء</string>
+    <string name="new_phrase">اضافة جملة</string>
+    <string name="req_successful">تم قبول الطلب</string>
+    <string name="req_crash">مشكلة في الشبكة</string>
+    <string name="please_wait">الرجاء الانتظار</string>
+    <string name="thank_you">شكرا</string>
+
+	<string name="phrase_add">اظافة</string>
+    <string name="offline">غير متصل</string>
+    <string name="phrases">كتاب الجمل</string>
+    <string name="input_words_to_find">كلمة للبحث</string>
+    <string name="samples">عينات</string>
+	
+    <string name="hint_input_word">ادخل كلمة للبحث</string>
+    <string name="hint_txtRuWord">كلمات بالروسية</string>
+    <string name="hint_txtChechen">كلمات بالعربية</string>	
+    <string name="msg_thanks_for_translation">شكرا للترجمة!</string>
+		
+	<string name="hint_rutext">На русском</string>
+    <string name="hint_engtext">In english</string>
+	<string name="hint_nohtext">Нохчийн маттахь</string>
+    <string name="phrase_addnew">ادخل جملة للترجمة</string>
+
+    <string name="fix_edit">تصحيح الجملة</string>
+    <string name="myphrases">جملي</string>
+
+    <string name="hint_choose_browser">التفعيل باستخدام:</string>
+    <string name="mnu_our_site">الموقع</string>
+    <string name="mnu_settings">الاعدادات</string>
+
+ 
+    <string name="select_text_size">ضبط حجم الخط</string>
+    <string name="text_size">حجم الخط</string>
+    <string name="size">الحجم</string>
+    <string name="color">اللون</string>
+
+    <string name="settings_reset">اعادة ضبط الاعدادات</string>
+    <string name="settings_resetted">نعم</string>
+
+    <string name="buttons_random_word">كلمة عشوائية</string>
+
+    <string name="set_ui_language">Set UI locale</string>
+    <string name="ui_language">UI locale</string>
+    <string name="after_restart">الرجاء اعادة تشغيل هذا البرنامج</string>
+    <string name="language">اللغة</string>
+
+    <string name="translate_to">الترجمة الى:</string>
+    <string name="russian">Russian</string>
+    <string name="chechen">Chechen</string>
+    <string name="english">English</string>
+    <string name="translate_from">الترجمة من:</string>
+    <string name="add_translation">اظف ترجمة</string>
+    <string name="i_know_translation">انا متمكن من الترجمة</string>
+    <string name="incorrect_vector">Incorrect translation vector</string>
+    <string name="not_enough_long">طول النص غير كافي</string>
+
+    <string name="btns_text_color">لون نص الازرار</string>
+    <string name="select_btns_text_color">اختيار لون الازرار</string>
+    <string name="hint_input_here_to_be_translated">ادخل النص الذي تريد ترجمته</string>
+    <string name="hint_input_here_translation">اذا كنت متمكن من الترجمة اضغط هنا</string>
+
+
+    <string name="translations_history">تاريخ الترجمة</string>
+    <string name="user">المستخدم</string>
+    <string name="no_translations_created">لا يوجد تاريخ للترجمة</string>
+
+    <string name="save">حفظ</string>
+    <string name="audio">صوت</string>
+
+    <string name="rec_start">بدأ التسجيل</string>
+    <string name="rec_stop">ايقاف التسجيل</string>
+    <string name="time_null">00:00</string>
+
+    <string name="rec_options">تسجيل الصوت</string>
+    <string name="recorded_files">التسجيلات الصوتية</string>
+    <string name="upload_recording_or_not">تم تسجيل الصوت, هل تريد رفع الملف الصوتي؟ اذا كنت قدرفعت الملف مسبقا فسيتم استبداله بالجديد</string>
+
+
+    <string name="ransw_audio_rec_ok">تم رفع الملف الصوتي</string>
+    <string name="ransw_audio_rec_fail">خطأ</string>
+    <string name="ransw_audio_rec_already_has">لقد تم تسجيل الصوت مسبقا</string>
+    <string name="ransw_audio_rec_rewrited">تم تسجيل الصوت بنجاح</string>
+
+
+    <string name="ransw_audio_rec_how_to">تسجيل >الملف الصوتي\nقم بالتسجيل لمن هم بحاجة الى المساعدة, للتسجيل اظغط[ابدأ التسجيل] و ابدأ التسجيل.</string>
+
+    <string name="rec_no_phrase_or_translation">لم تقم بكتابة الترجمة او الجملة</string>
+    <string name="rec_access_denied">ليس لديك التصريح للقيام بهذه العملية</string>
+
+    <string name="close">اغلق</string>
+    <string name="clearcache">امسح الكاش</string>
+    <string name="rec_cache_cleaned">تم الغاء الكاش</string>
+    <string name="ok">نعم</string>
+    <string name="file_downloaded">تم تحميل الملف</string>
+    <string name="err_when_downloading">خطأ في تحميل الملف</string>
+    <string name="phrase_added">تم اظافة الجملة</string>
+    <string name="wait">انتظر ...!</string>
+    <string name="access_denied">الدخول غير مسموح</string>
+
+    <string name="add_word">اظف كلمة</string>
+    <string name="header_declensions">تصريف</string>
+    <string name="header_plural">صيغة الجمع</string>
+
+    <string name="next">التالي</string>
+    <string name="maybe_there_is_already_answered">قد تكون الجملة مترجمة مسبقا, الرجاء التأكد من البحث</string>
+    <string name="phrase_on_moderation">الجملة مأخوذة بالحسبان و ستضهر بعد التدقيق و شكرا</string>
+
+    <string name="moderation">Moderation</string>
+
+    <string name="title_activity_get_mod">GoMod</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="get_mod">Введите свободный перевод указанного текста на чеченский, а затем нажмите на "Записать произношение" и прочитайте вслух</string>
+    <string name="txt_to_write">Приветствую вас! Я хочу стать модератором, чтобы улучшить это приложение и сделать чеченский язык популярным.Я буду писать только правильные вещи и не буду злоупотреблять своими правами.</string>
+    <string name="send">Send</string>
+
+    <string name="file_downloading">قيد التحميل, الرجاء الانتظار</string>
+    <string name="translation_direction">توجه الترجمة</string>
+    <string name="sort_options">ترتيب البحث</string>
+
+    <string name="sort_alphabetical">الابجدية</string>
+    <string name="sort_date">التاريخ</string>
+    <string name="sort_phrase_lenght">طول الجملة</string>
+    <string name="sort_translation_lenght">طول الترجمة</string>
+
+    <string name="search_method">اسلوب البحث</string>
+    <string name="direct">مباشر</string>
+    <string name="recursive">متكرر</string>
+
+    <string name="search_objects">طريقة البحث</string>
+    <string name="words">كلمات</string>
+    <string name="search_settings">اعدادات البحث</string>
+
+    <string name="now_you_are_online">انت متصل بالانترنت</string>
+    <string name="now_you_are_offline">انت غير متصل بالانترنت</string>
+    <string name="for_this_you_need_online_mode">العملية بحاجة لاتصال بالانترنت</string>
+
+    <string name="not_connected">خير متصل بالانترنت</string>
+
+    <string name="choose_at_least_one_method">الرجاء اختيار اسلوب واحد على الاقل</string>
+    <string name="choose_at_least_one_search_pattern">اختر اسلوب بحث واحد على الاقل</string>
+
+    <string name="app_actions">الحركة بعد</string>
+    <string name="what_to_do_after_edit">تعديل نص الجملة</string>
+    <string name="what_to_do_after_edit_summary">اختر ما سيحدث بعد تعديل الجملة</string>
+	
+	
+	
+	<string name="profile">الملف الشخصي</string>
+    <string name="user_profile">اسم المستخدم</string>
+    <string name="user_id">رقم المستخدم</string>
+    <string name="name">الاسم</string>
+    <string name="user_name_hint">ادخل اسم المستخدم</string>
+    <string name="user_password">كلمة السر</string>
+    <string name="user_password_hint">ادخل كلمة السر الجديدة</string>
+    <string name="authorization">التصريح</string>
+    <string name="role">الوظيفة</string>
+    <string name="gopro">ارسال طلب رفع التصريح</string>
+
+    <string name="user_translations_count">عدد الترجمات</string>
+    <string name="user_phrases_count">عدد الجمل</string>
+    <string name="user_audios_count">عدد التسجيلات الصوتية</string>
+
+    <string name="getting_information">الحصول على المعلومات</string>
+    <string name="only_latin_letters_and_digits_supported">خطأ! الرموز غير مسموح بها</string>
+    <string name="you_can_attach_private_login_and_password_to_your_account">يمكنكم استخدام كلمة مرور خاصة</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="restore">اعادة</string>
+    <string name="attach">ربط</string>
+    <string name="need_restart">تمة عملية اعادة ال</string>
+    <string name="admin">مشرف</string>
+    <string name="super_moderator">مشرف اعلى</string>
+    <string name="moderator">مشرف عام</string>
+    <string name="remove">ازالة</string>
+    <string name="audio_recorded_successfully">تسجيل الصوت بنجاح</string>
+
+    <string name="copy">نسخ</string>
+    <string name="edit">تعديل</string>
+    <string name="share">مشاركة</string>
+    <string name="history">تاريخ</string>
+    <string name="audios">الملفات الصوتية</string>
+
+    <string name="phrase">جمل</string>
+    <string name="translation">ترجمة</string>
+    <string name="phrase_copy_successfully_completed">تم نسخ الجملة بنجاح</string>
+    <string name="translation_copy_successfully_completed">تم نسخ الترجمة بنجاح</string>
+
+    <string name="main_settings">الاعدادات الرأيسية</string>
+    <string name="theme">الشكليات</string>
+    <string name="choose_theme">اختر الشكليات</string>
+
+    <string name="access_from_main">فقط من الشاشة الرأيسية</string>
+
+    <string name="update_offline_database">تحيث قاعدة البيانات الغير متصلة بالانترنت</string>
+    <string name="start_update_offline_database">التحقق من تحديث قاعدة البيانات الغير متصلةبالانترنت</string>
+
+    <string name="you_have_the_last_version">تمتلك اخر تحديث لقاعدة البيانات</string>
+    <string name="new_version_has_been_found">يوجد تجديد لقاعدة البيانات, هل تريط التحديث الان؟</string>
+
+    <string name="db_updated">تم تطوير قاعدة البيانات</string>
+
+    <string name="search">بحث</string>
+
+    <string name="internet_access_speed">سرعة الانترنت</string>
+    <string name="choose_internet_access_speed">اختر سرعة الانترنت لديك</string>
+
+
+    <string name="found">وجد</string>
+    <string name="req_successfully_done">تم الطلب بنجاح</string>
+
+    <string name="ruchemaciev">A.G. Macievs Russian - Chechen dictionary</string>
+    <string name="cherumaciev">A.G. Macievs Chechen - Russian dictionary</string>
+    <string name="ruchemacievappendix">A.G. Macievs Russian - Chechen dictionary appendix</string>
+
+    <string name="translit">مترجم</string>
+    <string name="translit_turn_on">تفعيل تغيير الترجمة من الحروف السيريلية الى الحروف اللاتينية</string>
+    <string name="turn_off">ايقاف التفعيل</string>
+    <string name="translit_che">فقط للجمل الشيشانية</string>
+    <string name="translit_everything">تجمة كل شيء</string>
+    <string name="text">كتابة</string>
+    <string name="alphabet">الابجدية</string>
+
+    <string name="backward">بالعكس</string>
+    <string name="forward">الى الامام</string>
+
+    <string name="ff_search">بحث</string>
+    <string name="ff_filtering">فلترة</string>
+    <string name="ff_asking">اسأل</string>
+    <string name="ff_translate">ترجم</string>
+    <string name="ff_listeming">استماع</string>
+    <string name="ff_recording">تسجيل اللفظ</string>
+
+    <string name="ask">اسأل</string>
+
+    <string name="welcome_one">مرحبا</string>
+    <string name="welcome_two">خمس سنوات من العمل لاجل 70.000 جملة, شكرا لشرائكم التطبيق</string>
+
+
+    <string name="ff_filtering_desc">استخدم فلترة البحث لتحسين النتائج</string>
+    <string name="ff_searching_desc">البحث في الاف الجمل و الكلمات الشيشانية</string>
+    <string name="ff_asking_desc">اظف الجمل التي تحتاجها لنتمكن من ترجمتها لك</string>
+    <string name="ff_translate_desc">ساعد الاخرين من خلال ترجماتك للكلمات و الجمل لهم</string>
+    <string name="ff_listening_desc">الاستماع للملفات الصوتية التي قام الاخرون بتسجيلها</string>
+
+    <string name="ff_recording_desc">قم بتسجيل الكلمات الشيشانية ليتمكن الاخروم من تعلم لفظها</string>
+
+    <string name="about_alphabet">.</string>
+
+    <string name="input_text_on_chechen_language">ادخل النص بالشيشانية</string>
+
+
+    <string name="phrase_already_exists">الجملة موجودة مسبقا</string>
+    <string name="phrase_has_been_updated">تم قبول التغيير في الجملة</string>
+
+    <string name="select_a_language">اختر اللغة</string>
+
+    <string name="rs_connection_error">خطأ في الاتصال</string>
+    <string name="rs_no_entries">لا توجد نتائج</string>
+    <string name="rs_ok">جيد</string>
+    <string name="rs_phrase_saved">تم حفظ الجملة بنجاح</string>
+    <string name="rs_phrase_added">تم اظافة الجملة بنجاح</string>
+    <string name="rs_phrase_updated">تم تحديث الجملة بنجاح</string>
+    <string name="rs_phrase_already_exists">الجملة موجودة مسبقا</string>
+    <string name="rs_phrase_rate_changed">تم تغيير تصنيف الجملة</string>
+
+    <string name="str_delete">ازالة</string>
+    <string name="str_edit">تعديل</string>
+
+    <string name="there_is_an_translation">الترجمة موجودة لهذه اللغة الرجاء ازالتها او تغيير اللغة</string>
+    <string name="add_translations">يمكن اظافة الترجمة من خلال النقر على الزر في الاسفل</string>
+
+    <string name="notes">ملاحظات و عينات عن تلك اللغة</string>
+    <string name="precision_level">دقة البحث</string>
+    <string name="precision_level_high">عالي</string>
+    <string name="precision_level_normal">متوسط</string>
+    <string name="precision_level_low">منخفظ</string>
+
+    <string name="prhase_added_to_moderation">[جملي]سيتم نشر اقتراحكم بعد التدقيق و الموافقة من قبل المشرف, و يمكنكم المتابعة من خلال </string>
+    <string name="input_forms">[اختياري] مدونات الجمل المظافة</string>
+
+    <string name="grammar">Grammar</string>
+
+    <string name="choose_orientation_summary">Choose the orientation</string>
+    <string name="orientation">Orientation</string>
+    <string name="critical_error">Critical error! Please reinstall the application</string>
+    <string name="any_official">Из Официальных Источников</string>
+    <string name="any_byusers">Из Добавленных пользователями</string>
+    <string name="added_by_users">Only added by users</string>
+    <string name="che_notes">Введите примечание для выражения</string>
+
+    <string name="malaev">Малаев Д.Б. Словарь Терминов По Физической Географии</string>
+    <string name="maciev">Мациев А.Г. Нохчийн-Оьрсийн Словарь.</string>
+    <string name="geo">Словарь Географических Наименований Населенных Пунктов ЧР</string>
+    <string name="karasaev">Карасаев А.Т., Мациев А.Г. Русско-Чеченский Словарь.</string>
+    <string name="yurslovar">Абдурашидов Э.Д. Чеченско-Русский Русско-Чеченский Словарь Юридических Терминов</string>
+    <string name="anatslovar">Берсанов Р.У. Адаман Анатоми. Нохчийн-Оьрсийн, Оьрсийн-Нохчийн Словарь. Грозный, 2011.</string>
+    <string name="matslovar">Умархаджиев С.М., Ахматукаев А.А. Нохчийн-Оьрсийн, Оьрсийн-Нохчийн Математикин Терминийн Словарь. Тбилиси, 2010.</string>
+
+    <string name="old_phrases">Добавлено Пользователями</string>
+    <string name="islam">Islam Khasakhanov</string>
+    <string name="movsar">Movsar Bekaev</string>
+    <string name="last_revision">Last.Rev:</string>
+</resources>
