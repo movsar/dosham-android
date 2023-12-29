@@ -62,9 +62,11 @@ class EntriesAdapter(private val dataList: List<EntryItem>) :
     override fun getItemCount(): Int = dataList.size
 
     class EntryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val tvSource: TextView = view.findViewById(R.id.tvSource)
         private val tvPhrase: TextView = view.findViewById(R.id.tvPhrase)
 
         fun bind(item: EntryItem.Entry) {
+            tvSource.text = item.realmEntry.GetSource()
             tvPhrase.text = item.realmEntry.Content
         }
     }

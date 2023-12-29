@@ -28,4 +28,17 @@ open class RealmEntry() : RealmObject {
     var UpdatedAt: Long = 0
     var Sounds: RealmList<RealmSound> = realmListOf()
     var Translations: RealmList<RealmTranslation> = realmListOf()
+
+    fun GetSource(): String? {
+        val sourceTitle: String? = when (Source?.Name) {
+            "Maciev" -> "Чеченско - русский словарь, А.Г.Мациева"
+            "Karasaev" -> "Русско - чеченский словарь, Карасаев А.Т., Мациев А.Г."
+            "User" -> "Добавлено пользователем"
+            "Malaev" -> "Чеченско - русский словарь, Д.Б. Малаева"
+            "Anatslovar" -> "Чеченско-русский, русско-чеченский словарь анатомии человека, Р.У. Берсанова"
+            "ikhasakhanov" -> "Ислам Хасаханов"
+            else -> null
+        }
+        return sourceTitle
+    }
 }

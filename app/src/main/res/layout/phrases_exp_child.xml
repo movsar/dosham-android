@@ -5,10 +5,8 @@
     android:id="@+id/phrasesChildLayout"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/main_background_color"
     android:longClickable="true"
-    android:orientation="horizontal"
-    android:paddingLeft="10dp">
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/tvExpChildLg"
@@ -18,27 +16,33 @@
         android:layout_marginTop="8dp"
         android:gravity="right"
         android:paddingBottom="5dp"
-        android:text=""
-        android:textColor="?attr/color_1"
+        android:text="ENG"
+        android:textColor="@color/custom_color_violet"
         android:textSize="@dimen/s_textsize"
-        app:layout_constraintStart_toEndOf="@+id/tvTranslation"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/tvTranslation"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|left"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:text=""
+        android:text="translation"
         android:textSize="@dimen/n_textsize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tvExpChildLg"
+        app:layout_constraintStart_toEndOf="@+id/tvExpChildLg"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/tvTranslationNotes"
@@ -47,7 +51,7 @@
         android:layout_gravity="left"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-        android:text=""
+        android:text="notes"
         android:textSize="@dimen/s_textsize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
