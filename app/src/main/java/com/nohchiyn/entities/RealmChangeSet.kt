@@ -7,7 +7,6 @@ import io.realm.kotlin.types.annotations.PrimaryKey
 import java.util.*
 
 @PersistedName("ChangeSet")
-
 open class RealmChangeSet() : RealmObject {
     @PrimaryKey
     var ChangeSetIndex: Long = 0
@@ -18,5 +17,4 @@ open class RealmChangeSet() : RealmObject {
     var RecordType: Int = 0
     var Operation: Int = 0
     var CreatedAt: RealmInstant = RealmInstant.now()
-
 }

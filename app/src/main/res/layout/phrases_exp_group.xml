@@ -1,75 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="?attr/main_background_color"
-    android:orientation="horizontal">
-
-
-
-    <ImageButton
-        android:id="@+id/pegBtnPhrasePMinus"
-        android:layout_width="@dimen/btns_height"
-        android:layout_height="@dimen/btns_height"
-        android:layout_gravity="center_vertical"
-        android:layout_alignParentRight="true"
-        android:background="@android:color/transparent"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:longClickable="false"
-        android:padding="7dp"
-        android:scaleType="centerCrop"
-        android:src="?attr/ibtn_discard_image" />
-
-    <ImageButton
-        android:id="@+id/pegBtnEdit"
-        android:layout_width="@dimen/btns_height"
-        android:layout_height="@dimen/btns_height"
-        android:layout_gravity="center_vertical"
-        android:layout_toLeftOf="@id/pegBtnPhrasePMinus"
-        android:background="@android:color/transparent"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:longClickable="false"
-        android:padding="7dp"
-        android:scaleType="centerCrop"
-        android:src="?attr/ibtn_edit_image" />
-
-    <ImageButton
-        android:id="@+id/pegBtnPlay"
-        android:layout_width="@dimen/btns_height"
-        android:layout_height="@dimen/btns_height"
-        android:layout_gravity="center_vertical"
-        android:layout_toLeftOf="@id/pegBtnEdit"
-        android:background="@android:color/transparent"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:longClickable="false"
-        android:padding="7dp"
-        android:scaleType="centerCrop"
-        android:src="?attr/ibtn_speaker_image" />
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tvPhrase"
         style="?attr/tv_original_textstyle"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/pegBtnEdit"
-        android:layout_gravity="left|center_vertical"
         android:paddingTop="5sp"
         android:text=""
-        android:textSize="@dimen/n_textsize" />
+        android:textSize="@dimen/n_textsize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvPhraseNotes"
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:id="@+id/translationsLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvPhrase"
-        android:layout_gravity="left"
-        android:gravity="center_vertical"
-        android:text=""
-        android:textSize="@dimen/s_textsize" />
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvPhrase"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
