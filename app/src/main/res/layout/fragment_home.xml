@@ -15,27 +15,28 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:layout_weight="1"
-        android:importantForAutofill="no"
         android:hint="@string/input_words_to_find"
+        android:importantForAutofill="no"
         android:maxLines="1"
         android:singleLine="true"
         android:textColor="?attr/main_txt_color"
         android:textSize="@dimen/n_textsize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnRefresh"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvMain" />
 
 
     <!--        <RecycleView-->
-<!--            android:id="@+id/expPhrases"-->
-<!--            android:layout_width="fill_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_gravity="left|center_vertical"-->
-<!--            android:indicatorLeft="250dp"-->
-<!--            android:indicatorRight="250dp"-->
-<!--            android:layout_weight="1"-->
+    <!--            android:id="@+id/expPhrases"-->
+    <!--            android:layout_width="fill_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_gravity="left|center_vertical"-->
+    <!--            android:indicatorLeft="250dp"-->
+    <!--            android:indicatorRight="250dp"-->
+    <!--            android:layout_weight="1"-->
 
-<!--            />-->
+    <!--            />-->
 
 
     <ImageButton
@@ -74,5 +75,18 @@
         android:src="?attr/ibtn_options_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtSearchPhrase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

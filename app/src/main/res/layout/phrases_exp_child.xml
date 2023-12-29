@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/phrasesChildLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?attr/main_background_color"
+    android:longClickable="true"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp">
+
+    <TextView
+        android:id="@+id/tvExpChildLg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="5dp"
+        android:gravity="right"
+        android:text=""
+        android:textColor="?attr/color_1"
+        android:textSize="@dimen/s_textsize" />
+
+    <TextView
+        android:id="@+id/tvTranslation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|left"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/tvExpChildLg"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text=""
+        android:textSize="@dimen/n_textsize" />
+
+
+
+    <TextView
+        android:id="@+id/tvTranslationNotes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTranslation"
+        android:layout_gravity="left"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="@dimen/s_textsize" />
+
+
+
+</RelativeLayout>

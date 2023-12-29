@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btns_height"
+        android:id="@+id/spnATLang"
+        android:layout_gravity="center_horizontal"
+        android:entries="@array/arr_languages"
+        android:spinnerMode="dialog"
+        android:prompt="@string/select_a_language" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/txtATTranslation"
+        android:hint="@string/hint_input_here_translation"
+        android:layout_weight="1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/txtATNotes"
+        android:hint="@string/notes"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btns_height"
+            android:text="@string/cancel"
+            android:id="@+id/btnATCancel"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btns_height"
+            android:text="@string/save"
+            android:id="@+id/btnATSave"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

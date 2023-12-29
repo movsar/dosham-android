@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?attr/main_background_color"
+    android:orientation="horizontal">
+
+
+
+    <ImageButton
+        android:id="@+id/pegBtnPhrasePMinus"
+        android:layout_width="@dimen/btns_height"
+        android:layout_height="@dimen/btns_height"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:longClickable="false"
+        android:padding="7dp"
+        android:scaleType="centerCrop"
+        android:src="?attr/ibtn_discard_image" />
+
+    <ImageButton
+        android:id="@+id/pegBtnEdit"
+        android:layout_width="@dimen/btns_height"
+        android:layout_height="@dimen/btns_height"
+        android:layout_gravity="center_vertical"
+        android:layout_toLeftOf="@id/pegBtnPhrasePMinus"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:longClickable="false"
+        android:padding="7dp"
+        android:scaleType="centerCrop"
+        android:src="?attr/ibtn_edit_image" />
+
+    <ImageButton
+        android:id="@+id/pegBtnPlay"
+        android:layout_width="@dimen/btns_height"
+        android:layout_height="@dimen/btns_height"
+        android:layout_gravity="center_vertical"
+        android:layout_toLeftOf="@id/pegBtnEdit"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:longClickable="false"
+        android:padding="7dp"
+        android:scaleType="centerCrop"
+        android:src="?attr/ibtn_speaker_image" />
+
+    <TextView
+        android:id="@+id/tvPhrase"
+        style="?attr/tv_original_textstyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/pegBtnEdit"
+        android:layout_gravity="left|center_vertical"
+        android:paddingTop="5sp"
+        android:text=""
+        android:textSize="@dimen/n_textsize" />
+
+    <TextView
+        android:id="@+id/tvPhraseNotes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPhrase"
+        android:layout_gravity="left"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textSize="@dimen/s_textsize" />
+
+
+</RelativeLayout>

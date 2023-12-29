@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/main_background_color">
+
+ <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+
+         <TextView
+             android:id="@+id/textView15"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="5dp"
+             android:gravity="center"
+             android:text="@string/precision_level"
+             android:textSize="@dimen/s_textsize"
+             android:layout_marginTop="5dp" />
+
+
+
+         <RadioGroup
+             android:id="@+id/rgFiltersPrecision"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
+
+
+             <RadioButton
+                 android:id="@+id/rdbFiltersSortPrecisionNormal"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:text="@string/precision_level_normal"
+                 android:textSize="@dimen/s_textsize"
+                 android:layout_weight="1"
+                 />
+
+             <RadioButton
+                 android:id="@+id/rdbFiltersSortPrecisionLow"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:text="@string/precision_level_low"
+                 android:textSize="@dimen/s_textsize"
+                 android:layout_weight="1"/>
+
+         </RadioGroup>
+
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvSearchObjects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="@string/search_objects"
+                android:textSize="@dimen/s_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <CheckBox
+                android:id="@+id/chkFiltersObjWords"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/words"
+                android:textSize="@dimen/s_textsize"
+                android:layout_weight="1"
+                />
+
+            <CheckBox
+                android:id="@+id/chkFiltersObjPhrases"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/phrases"
+                android:textSize="@dimen/s_textsize"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+     <CheckBox
+         android:id="@+id/chkFiltersOnlyUserphrases"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/added_by_users"
+         android:textSize="@dimen/s_textsize" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvSortOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/sort_options"
+                android:textSize="@dimen/s_textsize" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rgFiltersSortOptions"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdbFiltersSortAlphabetical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sort_alphabetical"
+                android:textSize="@dimen/s_textsize"
+                />
+
+            <RadioButton
+                android:id="@+id/rdbFiltersSortDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sort_date"
+                android:textSize="@dimen/s_textsize" />
+
+            <RadioButton
+                android:id="@+id/rdbFiltersSortPhraseLenght"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sort_phrase_lenght"
+                android:textSize="@dimen/s_textsize" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnFiltersOk"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btns_height"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:text="@string/ok"
+                android:textSize="@dimen/s_textsize" />
+
+            <Button
+                android:id="@+id/btnFiltersCancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btns_height"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:text="@string/cancel"
+                android:textSize="@dimen/s_textsize" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

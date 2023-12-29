@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+        android:stretchColumns="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/main_background_color">
+    <ImageButton
+            android:layout_width="@dimen/btns_height"
+            android:layout_height="@dimen/btns_height"
+            android:id="@+id/ibtnPlay" android:src="?attr/ibtn_play_image"
+            android:scaleType="centerCrop"
+        android:layout_gravity="center_vertical"
+        android:padding="7dp" />
+
+    <ImageButton
+        android:layout_width="@dimen/btns_height"
+        android:layout_height="@dimen/btns_height"
+        android:id="@+id/ibtnRecordings_r_remove"
+        android:src="?attr/ibtn_discard_image"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="center_vertical"
+        android:padding="7dp" />
+
+    <TextView
+            android:id="@+id/tv_Recordings_r_date"
+            android:gravity="center"
+            android:layout_width="wrap_content" android:layout_gravity="center_vertical" />
+    <TextView
+            android:id="@+id/tvRecordings_r_username"
+            android:gravity="center" android:layout_gravity="center_vertical"
+        android:textSize="@dimen/n_textsize" />
+
+</TableRow>

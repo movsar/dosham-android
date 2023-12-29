@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/main_settings">
+        <ListPreference
+            android:defaultValue="ru"
+            android:entries="@array/LanguageArray"
+            android:entryValues="@array/LanguageValues"
+            android:key="DefaultLanguage"
+            android:summary="@string/set_ui_language"
+            android:title="@string/language" />
+        <ListPreference
+            android:defaultValue="light"
+            android:entries="@array/ThemesArray"
+            android:entryValues="@array/ThemesValues"
+            android:key="selected_theme"
+            android:summary="@string/choose_theme"
+            android:title="@string/theme" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/OrientArray"
+            android:entryValues="@array/OrientValues"
+            android:key="orient"
+            android:summary="@string/choose_orientation_summary"
+            android:title="@string/orientation" />
+        <Preference
+            android:key="btnUpdateDB"
+            android:summary="@string/start_update_offline_database"
+            android:title="@string/update_offline_database" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/text">
+        <ListPreference
+            android:defaultValue="off"
+            android:entries="@array/TranslitOptionsArray"
+            android:entryValues="@array/TranslitOptionsValues"
+            android:key="TranslitOptions"
+            android:summary="@string/translit_turn_on"
+            android:title="@string/translit" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/app_actions">
+        <ListPreference
+            android:defaultValue="goto_phrase"
+            android:entries="@array/ActionsArray"
+            android:entryValues="@array/ActionsValues"
+            android:key="ToDoAfter"
+            android:summary="@string/what_to_do_after_edit_summary"
+            android:title="@string/what_to_do_after_edit" />
+        <ListPreference
+            android:defaultValue="3500"
+            android:entries="@array/InternetAccessArray"
+            android:entryValues="@array/InternetAccessValues"
+            android:key="conn_timeout"
+            android:summary="@string/choose_internet_access_speed"
+            android:title="@string/internet_access_speed" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

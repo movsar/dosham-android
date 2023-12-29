@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:background="?attr/main_background_color">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvProfileIDLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/user_id"
+            android:textSize="@dimen/n_textsize"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:layout_gravity="left" />
+
+        <TextView
+            android:id="@+id/tvProfileID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/n_textsize"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_gravity="right" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvProfileRoleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/role"
+            android:textSize="@dimen/n_textsize"
+            android:layout_weight="1"
+            android:layout_gravity="left" />
+
+        <TextView
+            android:id="@+id/tvProfileRole"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/n_textsize"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right" />
+    </TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvProfilePhrasesCountLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/user_phrases_count"
+            android:textSize="@dimen/s_textsize"
+            android:paddingTop="10dp"
+            android:layout_weight="1"
+            android:layout_gravity="left" />
+
+        <TextView
+            android:id="@+id/tvProfilePhrasesCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/s_textsize"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="bottom|right" />
+    </TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvProfileTransCountLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/user_translations_count"
+            android:textSize="@dimen/s_textsize"
+            android:layout_weight="1"
+            android:layout_gravity="left" />
+
+        <TextView
+            android:id="@+id/tvProfileTransCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/s_textsize"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right" />
+    </TableRow>
+
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvProfileAudiosCountLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/user_audios_count"
+            android:textSize="@dimen/s_textsize"
+            android:layout_weight="1"
+            android:layout_gravity="left" />
+
+        <TextView
+            android:id="@+id/tvProfileAudiosCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/s_textsize"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnProfileGoPro"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btns_height"
+            android:layout_column="0"
+            android:text="@string/gopro"
+            android:textSize="@dimen/s_textsize"
+            android:visibility="invisible" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/you_can_attach_private_login_and_password_to_your_account"
+            android:gravity="center"
+            android:id="@+id/tvProfileLabel1"
+            android:layout_marginTop="20dp"
+            android:textSize="@dimen/s_textsize" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btns_height"
+        android:weightSum="2"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/tvProfileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textSize="@dimen/n_textsize"
+            android:layout_weight="0.5" />
+
+        <EditText
+            android:digits="abcdefghijklmnopqrstuvwxyz1234567890_-"
+            android:id="@+id/txtProfileUsername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:hint="@string/user_name_hint"
+            android:textSize="@dimen/s_textsize"
+            android:layout_marginRight="10dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btns_height"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvProfilePassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/user_password"
+            android:textSize="@dimen/n_textsize"
+            android:layout_weight="0.5" />
+
+        <EditText
+            android:digits="abcdefghijklmnopqrstuvwxyz1234567890_-"
+            android:id="@+id/txtProfilePassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:hint="@string/user_password_hint"
+            android:inputType="textVisiblePassword"
+            android:textSize="@dimen/s_textsize"
+            android:layout_marginRight="10dp" />
+
+    </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/btns_height"
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:gravity="right">
+
+            <Button
+                android:id="@+id/btnProfileRestore"
+                android:layout_width="@dimen/btns_width"
+                android:layout_height="@dimen/btns_height"
+                android:layout_gravity="top"
+                android:text="@string/restore"
+                android:textSize="@dimen/s_textsize" />
+
+            <Button
+                android:id="@+id/btnProfileAttach"
+                android:layout_width="@dimen/btns_width"
+                android:layout_height="@dimen/btns_height"
+                android:layout_gravity="top"
+                android:text="@string/attach"
+                android:textSize="@dimen/s_textsize" />
+        </TableRow>
+
+        <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btns_height"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnProfileCancel"
+            android:layout_width="@dimen/btns_width"
+            android:layout_height="@dimen/btns_height"
+            android:layout_gravity="bottom"
+            android:text="@string/close"
+            android:textSize="@dimen/s_textsize" />
+
+        </TableRow>
+
+        <FrameLayout
+            android:id="@+id/adLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:orientation="vertical"
+            android:baselineAligned="false"
+            android:paddingTop="5dp"
+            android:background="#000000">
+        </FrameLayout>
+</LinearLayout>
+
+</ScrollView>

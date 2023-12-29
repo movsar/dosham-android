@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:paddingLeft="8dp"
+    android:paddingRight="4dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EN"
+        android:id="@+id/tvTrLG"
+        android:layout_gravity="top|right"
+        android:textSize="@dimen/s_textsize"
+        android:textColor="#5c84ff"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTrTranslation"
+        android:layout_gravity="center"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:textSize="@dimen/n_textsize" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTrNotes"
+        android:layout_gravity="bottom"
+        android:paddingTop="0dp"
+        android:textSize="@dimen/s_textsize"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/tvTrTranslation"
+        />
+</RelativeLayout>

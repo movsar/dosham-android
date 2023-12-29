@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/main_background_color">
+
+    <TextView
+        android:id="@+id/tvStartRecording"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/ransw_audio_rec_how_to"
+        android:textSize="@dimen/s_textsize" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btnRecStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/rec_start"
+            android:textSize="@dimen/s_textsize" />
+
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/time_null"
+            android:textSize="@dimen/n_textsize" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvRecPhrase"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/s_textsize"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffc0c0ab"
+        android:textColor="#ff000000" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/recorded_files"
+        android:textSize="@dimen/s_textsize" />
+
+    <ListView
+        android:id="@+id/lstAudioList"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="right">
+
+        <Button
+            android:id="@+id/btnRecClearCache"
+            android:layout_width="@dimen/btns_width"
+            android:layout_height="wrap_content"
+            android:text="@string/clearcache"
+            android:textSize="@dimen/s_textsize" />
+
+        <Button
+            android:id="@+id/btnRecClose"
+            android:layout_width="@dimen/btns_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/close"
+            android:textSize="@dimen/s_textsize" />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        android:baselineAligned="false"
+        android:paddingTop="5dp"
+        android:background="#000000">
+    </FrameLayout>
+</LinearLayout>
