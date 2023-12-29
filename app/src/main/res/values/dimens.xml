@@ -14,7 +14,7 @@
     <dimen name="n_textsize">18sp</dimen>
     <dimen name="s_textsize">14sp</dimen>
 
-    <dimen name="btns_height">40dp</dimen>
+    <dimen name="btns_height">48dp</dimen>
     <dimen name="btns_width">160dp</dimen>
 
     <dimen name="activity_horizontal_margin">16dp</dimen>

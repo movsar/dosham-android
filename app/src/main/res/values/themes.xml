@@ -1,66 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.Dosh" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-    </style>
-
-    <style name="Theme.Dosh.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="Theme.Dosh.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.Dosh.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ChechenLanguageDictionary" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
-
-    <style name="Theme.ChechenLanguageDictionary" parent="Base.Theme.ChechenLanguageDictionary" />
-	
-    <style name="DarkTheme" parent="android:Theme.Holo">
-        <item name="main_background_color">#000000</item>
-        <item name="main_frame_color">#ff2d2d2d</item>
-        <item name="main_txt_color">#cacaca</item>
-        <item name="main_lbl_color">#fcfcfc</item>
-        <item name="ibtn_filters_image">@drawable/ic_action_filter_on_light_fdark</item>
-        <item name="ibtn_search_image">@drawable/ic_action_search_fdark</item>
-        <item name="ibtn_refresh_image">@drawable/ic_action_refresh_fdark</item>
-        <item name="ibtn_wifi_image">@drawable/wifi_fdark</item>
-        <item name="ibtn_wifired_image">@drawable/wifi_red</item>
-        <item name="ibtn_options_image">@drawable/ic_action_menu_fdark</item>
-        <item name="ibtn_collapse_image">@drawable/ic_action_collapse_fdark</item>
-        <item name="ibtn_mic_image">@drawable/ic_action_mic_fdark</item>
-        <item name="ibtn_discard_image">@drawable/ic_action_discard_fdark</item>
-        <item name="ibtn_play_image">@drawable/ic_action_play_fdark</item>
-        <item name="ibtn_speaker_image">@drawable/ic_speaker_fdark</item>
-        <item name="ibtn_sheet_image">@drawable/ic_sheet_fdark</item>
-        <item name="ibtn_edit_image">@drawable/ic_action_edit_fdark</item>
-        <item name="ibtn_expand_image">@drawable/ic_action_expand_fdark</item>
-        <item name="ibtn_accept_image">@drawable/ic_action_accept_fdark</item>
-
-        <item name="exp_draft_phrase_color">#ffffef5a</item>
-        <item name="exp_filled_phrase_color">#ff06de3c</item>
-        <item name="spn_color">#ffdecbc5</item>
-        <item name="color_1">#8fded5</item>
-        <item name="tv_original_textstyle">@style/tvOriginalDark</item>
-        <item name="color_untrusted">#ccdf0206</item>
-        <item name="light_green">#00405d</item>
-    </style>
-    <style name="LightTheme" parent="android:Theme.Holo.Light">
         <item name="main_background_color">#ffded09a</item>
         <item name="main_frame_color">#357c6535</item>
         <item name="main_txt_color">#ff000000</item>
@@ -90,9 +30,35 @@
         <item name="color_untrusted">#db4d073c</item>
         <item name="light_green">#dfffc3</item>
 
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.Dosh.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="Theme.Dosh.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Dosh.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ChechenLanguageDictionary" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.ChechenLanguageDictionary" parent="Base.Theme.ChechenLanguageDictionary" />
 
     <style name="tvOriginalDark">
         <item name="android:textStyle">normal</item>
