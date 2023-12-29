@@ -1,5 +1,7 @@
 package com.nohchiyn.ui.home
 
+import EntriesAdapter
+import EntryItem
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nohchiyn.EntriesAdapter
 import com.nohchiyn.R
 import com.nohchiyn.databinding.FragmentHomeBinding
 import com.nohchiyn.entities.RealmChangeSet
@@ -20,6 +21,7 @@ import com.nohchiyn.entities.RealmTranslation
 import com.nohchiyn.entities.RealmUser
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
+import java.util.Random
 
 class HomeFragment : Fragment() {
 
@@ -57,14 +59,43 @@ class HomeFragment : Fragment() {
 
         val realm: Realm = Realm.open(config)
 
-        val results = realm.query(RealmEntry::class).limit(50).find().toList();
-        val adapter = EntriesAdapter(results)
+        val realmEntries = getRandomEntries(realm, 50)
+
+        val flatList = mutableListOf<EntryItem>()
+        realmEntries.forEach { entry ->
+            flatList.add(EntryItem.Entry(entry))
+            entry.Translations.forEach { translation ->
+                flatList.add(EntryItem.Translation(translation))
+            }
+        }
+
+
+        val adapter = EntriesAdapter(flatList)
         recyclerView.adapter = adapter
 
 
         return root
     }
+    fun getRandomEntries(realm: Realm, numberOfEntries: Int): List<RealmEntry> {
+        val results = mutableListOf<RealmEntry>()
+        val totalEntries = realm.query(RealmEntry::class).find().count().toInt()
 
+        if (totalEntries == 0 || numberOfEntries <= 0) {
+            return results
+        }
+
+        val random = Random()
+        for (i in 1..numberOfEntries) {
+            val randomIndex = random.nextInt(totalEntries)
+            realm.query(RealmEntry::class).find()?.let {
+                if (it.size > randomIndex) {
+                    results.add(it[randomIndex])
+                }
+            }
+        }
+
+        return results.distinct() // To ensure unique entries if needed
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

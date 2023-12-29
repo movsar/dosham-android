@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Dosh" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Dosh" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <item name="main_background_color">#ffded09a</item>
         <item name="main_frame_color">#357c6535</item>
         <item name="main_txt_color">#ff000000</item>

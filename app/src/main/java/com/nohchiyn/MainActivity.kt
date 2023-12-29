@@ -78,15 +78,6 @@ class MainActivity : AppCompatActivity() {
 //                recordId = "asdfdsf";
 //            })
 //        }
-
-        // all items in the realm
-        val entries: RealmResults<RealmEntry> = realm.query(RealmEntry::class).find();
-        val first = entries.get(0).Content;
-        val changeSets: RealmResults<RealmChangeSet> =
-            realm.query<RealmChangeSet>(RealmChangeSet::class, ).find()
-        val index = changeSets.get(1).ChangeSetIndex;
-
-        val a = 3;
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

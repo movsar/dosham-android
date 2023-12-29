@@ -1,48 +1,81 @@
-package com.nohchiyn
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.nohchiyn.R
 import com.nohchiyn.entities.RealmEntry
 import com.nohchiyn.entities.RealmTranslation
 
-class EntriesAdapter(private val dataList: List<RealmEntry>) :
-    RecyclerView.Adapter<EntriesAdapter.EntryViewHolder>() {
+sealed class EntryItem {
+    data class Entry(val realmEntry: RealmEntry) : EntryItem()
+    data class Translation(val realmTranslation: RealmTranslation) : EntryItem()
+}
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EntryViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.phrases_exp_group, parent, false)
-        return EntryViewHolder(view)
+class EntriesAdapter(private val dataList: List<EntryItem>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    companion object {
+        private const val TYPE_ENTRY = 0
+        private const val TYPE_TRANSLATION = 1
     }
 
-    override fun onBindViewHolder(holder: EntryViewHolder, position: Int) {
-        val item = dataList[position]
-        holder.bind(item)
+    override fun getItemViewType(position: Int): Int {
+        return when (dataList[position]) {
+            is EntryItem.Entry -> TYPE_ENTRY
+            is EntryItem.Translation -> TYPE_TRANSLATION
+            else -> throw AssertionError()
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        return when (viewType) {
+            TYPE_ENTRY -> EntryViewHolder(
+                inflater.inflate(
+                    R.layout.phrases_exp_group,
+                    parent,
+                    false
+                )
+            )
+
+            TYPE_TRANSLATION -> TranslationViewHolder(
+                inflater.inflate(
+                    R.layout.phrases_exp_child,
+                    parent,
+                    false
+                )
+            )
+
+            else -> throw IllegalArgumentException("Invalid view type")
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (val item = dataList[position]) {
+            is EntryItem.Entry -> (holder as EntryViewHolder).bind(item)
+            is EntryItem.Translation -> (holder as TranslationViewHolder).bind(item)
+            else -> throw AssertionError()
+        }
     }
 
     override fun getItemCount(): Int = dataList.size
 
-    class EntryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tvContent: TextView = itemView.findViewById(R.id.tvPhrase)
-        private val translationsLayout: LinearLayout = itemView.findViewById(R.id.translationsLayout)
+    class EntryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val tvPhrase: TextView = view.findViewById(R.id.tvPhrase)
 
-        fun bind(item: RealmEntry) {
-            tvContent.text = item.Content
+        fun bind(item: EntryItem.Entry) {
+            tvPhrase.text = item.realmEntry.Content
+        }
+    }
 
-            translationsLayout.removeAllViews()
-            val inflater = LayoutInflater.from(itemView.context)
-            item.Translations.forEach { translation ->
-                val translationView = inflater.inflate(R.layout.phrases_exp_child, translationsLayout, false)
-                val tvTranslation: TextView = translationView.findViewById(R.id.tvTranslation)
-                val tvTranslationNotes: TextView = translationView.findViewById(R.id.tvTranslationNotes)
+    class TranslationViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val tvTranslation: TextView = view.findViewById(R.id.tvTranslation)
+        private val tvTranslationNotes: TextView = view.findViewById(R.id.tvTranslationNotes)
 
-                tvTranslation.text = translation.Content
-                tvTranslationNotes.text = translation.Notes
-                translationsLayout.addView(translationView)
-            }
+        fun bind(item: EntryItem.Translation) {
+            tvTranslation.text = item.realmTranslation.Content
+            tvTranslationNotes.text = item.realmTranslation.Notes
         }
     }
 }

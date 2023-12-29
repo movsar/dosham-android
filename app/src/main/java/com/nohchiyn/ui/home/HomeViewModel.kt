@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nohchiyn.EntriesAdapter
 import com.nohchiyn.entities.RealmChangeSet
 import com.nohchiyn.entities.RealmEntry
 import com.nohchiyn.entities.RealmSound
