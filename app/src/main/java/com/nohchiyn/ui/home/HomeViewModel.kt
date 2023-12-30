@@ -1,27 +1,77 @@
 package com.nohchiyn.ui.home
 
+import EntryItem
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.nohchiyn.entities.RealmChangeSet
 import com.nohchiyn.entities.RealmEntry
-import com.nohchiyn.entities.RealmSound
-import com.nohchiyn.entities.RealmSource
-import com.nohchiyn.entities.RealmTranslation
-import com.nohchiyn.entities.RealmUser
+import com.nohchiyn.services.RealmService
 import io.realm.kotlin.Realm
-import io.realm.kotlin.RealmConfiguration
+import io.realm.kotlin.ext.query
+import io.realm.kotlin.query.RealmQuery
+import io.realm.kotlin.query.RealmResults
+import io.realm.kotlin.query.find
+import java.util.Random
+
 
 class HomeViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    val realm: Realm = RealmService.getInstance();
+
+    private val _entries = MutableLiveData<List<EntryItem>>()
+    val entries: LiveData<List<EntryItem>> = _entries
+
+    fun setEntries(realmEntries: List<RealmEntry>) {
+        val flatList = mutableListOf<EntryItem>()
+        realmEntries.forEach { entry ->
+            flatList.add(EntryItem.Entry(entry))
+            entry.Translations.forEach { translation ->
+                flatList.add(EntryItem.Translation(translation))
+            }
+        }
+
+        _entries.postValue(flatList)
     }
-    val text: LiveData<String> = _text
 
-    fun loadEntries(){
+    fun loadRandomEntries() {
+        val realmEntries = getRandomEntries(50)
 
+        setEntries(realmEntries)
+    }
+
+    fun getRandomEntries(numberOfEntries: Int): List<RealmEntry> {
+        val results = mutableListOf<RealmEntry>()
+        val totalEntries = realm.query(RealmEntry::class).find().count().toInt()
+
+        if (totalEntries == 0 || numberOfEntries <= 0) {
+            return results
+        }
+
+        val random = Random()
+        for (i in 1..numberOfEntries) {
+            val randomIndex = random.nextInt(totalEntries)
+            realm.query(RealmEntry::class).find()?.let {
+                if (it.size > randomIndex) {
+                    results.add(it[randomIndex])
+                }
+            }
+        }
+
+        return results.distinct() // To ensure unique entries if needed
+    }
+
+    fun search(s: String) {
+        if (s.isBlank()) {
+            return;
+        }
+
+        var results: RealmResults<RealmEntry>;
+        if (s.length < 3) {
+            results = realm.query<RealmEntry>("Content LIKE [c] '${s}*'").find()
+        }else {
+            results = realm.query<RealmEntry>("(Content LIKE [c] '*${s}*') OR SUBQUERY(Translations, \$translation, \$translation.Content LIKE [c] '${s}*').@count > 0").find()
+        }
+
+        setEntries(results);
     }
 }

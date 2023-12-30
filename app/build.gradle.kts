@@ -8,6 +8,15 @@ android {
     namespace = "com.nohchiyn"
     compileSdk = 34
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("C:\\Users\\x.dr\\source\\repos\\movsar\\dosham-android\\android_key")
+            storePassword = "135790!ы"
+            keyAlias = "key0"
+            keyPassword = "135790!ы"
+        }
+    }
+
     defaultConfig {
         applicationId = "com.nohchiyn"
         minSdk = 24
@@ -22,6 +31,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {

@@ -49,6 +49,7 @@
         android:contentDescription=""
         android:scaleType="centerCrop"
         android:src="?attr/ibtn_filters_image"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSearchOpt" />
 
@@ -73,6 +74,7 @@
         android:contentDescription=""
         android:scaleType="centerCrop"
         android:src="?attr/ibtn_options_image"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

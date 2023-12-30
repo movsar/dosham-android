@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // First time initialization
+        fileService = FileService(this);
+        fileService.deployLocalDatabase();
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -42,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -51,31 +56,6 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        fileService = FileService(this);
-        fileService.deployLocalDatabase();
-
-        // Setup local database access
-        val config = RealmConfiguration.Builder(
-            schema = setOf(
-                RealmChangeSet::class,
-                RealmEntry::class,
-                RealmSource::class,
-                RealmSound::class,
-                RealmUser::class,
-                RealmTranslation::class,
-            )
-        ).schemaVersion(18).name("local.datx").build()
-
-        val realm: Realm = Realm.open(config)
-
-//        realm.writeBlocking {
-//            val test = RealmChangeSet();
-//            copyToRealm(test.apply {
-//                changeSetIndex = 2;
-//                recordId = "asdfdsf";
-//            })
-//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
