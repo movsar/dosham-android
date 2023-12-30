@@ -2,7 +2,6 @@ package com.nohchiyn
 
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -21,7 +20,6 @@ import com.nohchiyn.entities.RealmUser
 import com.nohchiyn.services.FileService
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
-import io.realm.kotlin.query.RealmResults
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_alphabet
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
