@@ -14,8 +14,9 @@ class FileService(private val context: Context) {
         val zipfileName = "data.zip";
         val dbFileName = "local.datx";
 
+        val zipFile = File(context.filesDir, zipfileName);
         val dbFile = File(context.filesDir, dbFileName);
-        if (dbFile.exists()) {
+        if (dbFile.exists() && zipFile.exists()) {
             return;
         }
 

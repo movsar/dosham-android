@@ -1,3 +1,5 @@
+import android.text.SpannableString
+import android.text.style.LeadingMarginSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,19 +67,34 @@ class EntriesAdapter(private val dataList: List<EntryItem>) :
         private val tvSource: TextView = view.findViewById(R.id.tvSource)
         private val tvPhrase: TextView = view.findViewById(R.id.tvPhrase)
 
+
         fun bind(item: EntryItem.Entry) {
             tvSource.text = item.realmEntry.GetSource()
-            tvPhrase.text = item.realmEntry.Content
+            tvPhrase.setText(item.realmEntry.Content)
         }
     }
 
     class TranslationViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val tvTranslation: TextView = view.findViewById(R.id.tvTranslation)
         private val tvTranslationNotes: TextView = view.findViewById(R.id.tvTranslationNotes)
+        private val tvLanguage: TextView = view.findViewById(R.id.tvExpChildLg)
 
         fun bind(item: EntryItem.Translation) {
-            tvTranslation.text = item.realmTranslation.Content
-            tvTranslationNotes.text = item.realmTranslation.Notes
+            val spannableString = SpannableString(item.realmTranslation.Content)
+            spannableString.setSpan(
+                LeadingMarginSpan.Standard(100, 0),
+                0,
+                item.realmTranslation.Content!!.length,
+                0
+            )
+
+            tvTranslation.setText(spannableString)
+            tvLanguage.setText(item.realmTranslation.LanguageCode)
+
+            if (item.realmTranslation.Notes != null && item.realmTranslation.Notes!!.length > 0){
+                tvTranslationNotes.text = item.realmTranslation.Notes
+                tvTranslationNotes.visibility = View.VISIBLE;
+            }
         }
     }
 }
