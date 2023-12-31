@@ -67,9 +67,9 @@ class HomeViewModel : ViewModel() {
 
         var results: RealmResults<RealmEntry>;
         if (s.length < 3) {
-            results = realm.query<RealmEntry>("Content LIKE [c] '${s}*'").find()
+            results = realm.query<RealmEntry>("RawContents LIKE [c] '${s}*'").find()
         }else {
-            results = realm.query<RealmEntry>("(Content LIKE [c] '*${s}*') OR SUBQUERY(Translations, \$translation, \$translation.Content LIKE [c] '${s}*').@count > 0").find()
+            results = realm.query<RealmEntry>("(RawContents LIKE [c] '*${s}*') OR SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${s}*').@count > 0").find()
         }
 
         setEntries(results);

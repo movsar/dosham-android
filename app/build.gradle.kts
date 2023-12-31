@@ -19,7 +19,7 @@ android {
 
     defaultConfig {
         applicationId = "com.nohchiyn"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1414737
         versionName = "7.3.7"

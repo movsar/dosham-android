@@ -2,6 +2,8 @@ package com.nohchiyn.ui.home
 
 import EntriesAdapter
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -18,6 +20,9 @@ import com.nohchiyn.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
+
+    private val handler = Handler(Looper.getMainLooper())
+    private var searchRunnable: Runnable? = null
 
     private val binding get() = _binding!!
 
@@ -42,7 +47,16 @@ class HomeFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                homeViewModel.search(s.toString());
+                // Cancel any previous runnable
+                searchRunnable?.let { handler.removeCallbacks(it) }
+
+                // Create a new runnable for the new text
+                searchRunnable = Runnable {
+                    homeViewModel.search(s.toString())
+                }
+
+                // Post the runnable with a delay of 250ms
+                handler.postDelayed(searchRunnable!!, 250)
             }
 
             override fun afterTextChanged(s: Editable?) {

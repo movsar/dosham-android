@@ -1,7 +1,6 @@
 package com.nohchiyn.ui.alphabet
 
 import android.content.res.AssetFileDescriptor
-import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -39,12 +38,14 @@ class AlphabetFragment : Fragment() {
         mPlayer = MediaPlayer()
 
         val container = root.findViewById<TableLayout>(R.id.tlAlpha) // Replace with your actual container ID
+        var counter: Int = 0
         for (i in 0 until container.childCount) {
             val tableRow = container.getChildAt(i) as TableRow
             for (j in 0 until tableRow.childCount) {
-                val child = tableRow.getChildAt(i)
+                val child = tableRow.getChildAt(j)
                 if (child is ImageButton) {
                     child.setOnClickListener { onBtnClicked(it) }
+                    counter++
                 }
             }
         }
@@ -58,8 +59,8 @@ class AlphabetFragment : Fragment() {
 
     @Throws(IOException::class)
     fun onBtnClicked(v: View) {
-            var audioForButton = v.resources.getResourceName(v.id)
-            audioForButton = audioForButton.substring(audioForButton.indexOf("_") + 1) + ".flac"
+            var audioFileName = v.resources.getResourceName(v.id)
+            audioFileName = audioFileName.substring(audioFileName.indexOf("_") + 1) + ".flac"
 
             /*
         switch (v.getId()) {
@@ -74,7 +75,6 @@ class AlphabetFragment : Fragment() {
                 break;
         }
 */
-            assetFileDescriptor = requireContext().getAssets().openFd(audioForButton)
             if (mPlayer != null) {
                 if (mPlayer!!.isPlaying) {
                     mPlayer!!.stop()
@@ -82,8 +82,11 @@ class AlphabetFragment : Fragment() {
                 }
                 mPlayer!!.reset()
             } else mPlayer = MediaPlayer()
-            mPlayer!!.setDataSource(assetFileDescriptor!!.fileDescriptor, assetFileDescriptor!!.startOffset, assetFileDescriptor!!.length)
-            mPlayer!!.setAudioStreamType(AudioManager.STREAM_MUSIC)
+
+            val appPath: String = requireContext().filesDir.absolutePath
+            val filePath = "${appPath}/alpha/${audioFileName}";
+
+            mPlayer!!.setDataSource(filePath)
             mPlayer!!.prepare()
             mPlayer!!.start()
     }

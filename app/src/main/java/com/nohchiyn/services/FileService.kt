@@ -7,9 +7,16 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.InputStream
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.nio.file.attribute.PosixFilePermissions
 import java.util.zip.ZipFile
 
 class FileService(private val context: Context) {
+    fun setPermissions(filePath: String){
+        val path = Paths.get(filePath)
+        Files.setPosixFilePermissions(path, PosixFilePermissions.fromString("rwxrwxrwx"))
+    }
     fun deployLocalDatabase() {
         val zipfileName = "data.zip";
         val dbFileName = "local.datx";
@@ -36,7 +43,8 @@ class FileService(private val context: Context) {
     fun unzip(zipFileName: String, destinationDirectory: String) {
         try {
             val zipFile = File(context.filesDir.absolutePath + File.separator + zipFileName)
-            val destinationDirectoryPath = context.filesDir.absolutePath + File.separator + destinationDirectory
+            val destinationDirectoryPath =
+                context.filesDir.absolutePath + File.separator + destinationDirectory
 
             File(destinationDirectoryPath).run {
                 if (!exists()) {

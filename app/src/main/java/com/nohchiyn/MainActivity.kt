@@ -18,6 +18,7 @@ import com.nohchiyn.entities.RealmSource
 import com.nohchiyn.entities.RealmTranslation
 import com.nohchiyn.entities.RealmUser
 import com.nohchiyn.services.FileService
+import com.nohchiyn.services.RealmService
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         // First time initialization
         fileService = FileService(this);
         fileService.deployLocalDatabase();
+        RealmService.init(this);
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

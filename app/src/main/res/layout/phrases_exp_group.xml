@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="source"
         android:textSize="@dimen/m_textsize"
-        android:textColor="@color/custom_color_red"
+        android:textColor="@color/custom_color_grey"
         app:layout_constraintTop_toBottomOf="@id/tvPhrase"
         app:layout_constraintStart_toStartOf="parent"
         />
