@@ -67,11 +67,26 @@ class HomeViewModel : ViewModel() {
 
         var results: RealmResults<RealmEntry>;
         if (s.length < 3) {
-            results = realm.query<RealmEntry>("RawContents LIKE [c] '${s}*'").find()
+            results = realm.query<RealmEntry>("RawContents LIKE [c] '${s}*' AND Rate > 0").find()
         }else {
-            results = realm.query<RealmEntry>("(RawContents LIKE [c] '*${s}*') OR SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${s}*').@count > 0").find()
+            results = realm.query<RealmEntry>("(RawContents LIKE [c] '*${s}*' AND Rate > 0) OR SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${s}*' AND \$translation.Rate > 0).@count > 0").find()
         }
 
-        setEntries(results);
+        // Filter and sort entries starting with "s" by the length of RawContents
+        val startsWithSEntries = results
+            .filter { it.RawContents!!.startsWith("s", ignoreCase = true) }
+            .sortedBy { it.RawContents!!.length }
+
+//        val translationStartsWithResults = results
+//            .filter { it.Translations.filter { it.RawContents!!.startsWith(s) }.count() > 0}
+//
+//        // Filter entries that do not start with "s"
+        val otherEntries = results
+            .filterNot { it.RawContents!!.startsWith("s", ignoreCase = true) }
+
+        // Combine the two lists
+        val sortedCombinedEntries = startsWithSEntries + otherEntries
+
+        setEntries(sortedCombinedEntries);
     }
 }
