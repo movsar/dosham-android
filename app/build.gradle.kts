@@ -21,8 +21,8 @@ android {
         applicationId = "com.nohchiyn"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1414737
-        versionName = "7.3.7"
+        versionCode = 1414738
+        versionName = "7.3.8"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nohchiyn.entities.RealmEntry
+import com.nohchiyn.entities.RealmTranslation
 import com.nohchiyn.services.RealmService
 import io.realm.kotlin.Realm
 import io.realm.kotlin.ext.query
@@ -65,28 +66,38 @@ class HomeViewModel : ViewModel() {
             return;
         }
 
-        var results: RealmResults<RealmEntry>;
-        if (s.length < 3) {
-            results = realm.query<RealmEntry>("RawContents LIKE [c] '${s}*' AND Rate > 0").find()
-        }else {
-            results = realm.query<RealmEntry>("(RawContents LIKE [c] '*${s}*' AND Rate > 0) OR SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${s}*' AND \$translation.Rate > 0).@count > 0").find()
+        var searchText = s.lowercase();
+        searchText = searchText.replace('1', 'ӏ')
+        searchText = searchText.replace('|', 'ӏ');
+        searchText = searchText.trim().replace("[+!\"?^]*", "");
+
+        val fromRate = 0;
+
+        // StartsWith for Entry
+        val entryStartsWithResults: List<RealmEntry> =
+            realm.query<RealmEntry>("RawContents LIKE [c] '${searchText}*' AND Rate > ${fromRate}")
+                .find()
+                .sortedBy { it.RawContents }
+
+        setEntries(entryStartsWithResults)
+
+        // StartsWith for Translation
+        val translationStartsWithResults =
+            realm.query<RealmEntry>("SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0")
+                .find()
+
+        setEntries(entryStartsWithResults + translationStartsWithResults)
+
+        if (searchText.length > 4) {
+            val containsResults =
+                realm.query<RealmEntry>("(RawContents LIKE [c] '*${searchText}*' AND Rate > ${fromRate}) OR SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '*${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0")
+                    .find()
+                    .filterNot { it in entryStartsWithResults }
+                    .filterNot { it in translationStartsWithResults }
+                    .sortedBy { it.RawContents }
+
+            setEntries(entryStartsWithResults + translationStartsWithResults + containsResults);
         }
 
-        // Filter and sort entries starting with "s" by the length of RawContents
-        val startsWithSEntries = results
-            .filter { it.RawContents!!.startsWith("s", ignoreCase = true) }
-            .sortedBy { it.RawContents!!.length }
-
-//        val translationStartsWithResults = results
-//            .filter { it.Translations.filter { it.RawContents!!.startsWith(s) }.count() > 0}
-//
-//        // Filter entries that do not start with "s"
-        val otherEntries = results
-            .filterNot { it.RawContents!!.startsWith("s", ignoreCase = true) }
-
-        // Combine the two lists
-        val sortedCombinedEntries = startsWithSEntries + otherEntries
-
-        setEntries(sortedCombinedEntries);
     }
 }
