@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("io.realm.kotlin")
+    id("com.apollographql.apollo3") version "3.8.2"
 }
 
 android {
@@ -48,6 +49,11 @@ android {
 }
 
 dependencies {
+    implementation("com.apollographql.apollo3:apollo-runtime:3.8.2")
+    implementation("com.squareup.moshi:moshi:1.12.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0")
     implementation("io.realm.kotlin:library-base:1.13.0")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -60,4 +66,10 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.nohchiyn")
+    }
 }

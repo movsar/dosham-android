@@ -30,7 +30,6 @@ class HomeViewModel : ViewModel() {
                 flatList.add(EntryItem.Translation(translation))
             }
         }
-
         _entries.postValue(flatList)
     }
 
@@ -72,10 +71,11 @@ class HomeViewModel : ViewModel() {
         searchText = searchText.trim().replace("[+!\"?^]*", "");
 
         val fromRate = 0;
+        val limitBy = 100;
 
         // StartsWith for Entry
         val entryStartsWithResults: List<RealmEntry> =
-            realm.query<RealmEntry>("RawContents LIKE [c] '${searchText}*' AND Rate > ${fromRate}")
+            realm.query<RealmEntry>("RawContents LIKE [c] '${searchText}*' AND Rate > ${fromRate} LIMIT (${limitBy})")
                 .find()
                 .sortedBy { it.RawContents }
 
@@ -83,14 +83,14 @@ class HomeViewModel : ViewModel() {
 
         // StartsWith for Translation
         val translationStartsWithResults =
-            realm.query<RealmEntry>("SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0")
+            realm.query<RealmEntry>("SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0 LIMIT (${limitBy})")
                 .find()
 
         setEntries(entryStartsWithResults + translationStartsWithResults)
 
         if (searchText.length > 4) {
             val containsResults =
-                realm.query<RealmEntry>("(RawContents LIKE [c] '*${searchText}*' AND Rate > ${fromRate}) OR SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '*${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0")
+                realm.query<RealmEntry>("(RawContents LIKE [c] '*${searchText}*' AND Rate > ${fromRate}) OR (SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '*${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0) LIMIT (${limitBy})")
                     .find()
                     .filterNot { it in entryStartsWithResults }
                     .filterNot { it in translationStartsWithResults }

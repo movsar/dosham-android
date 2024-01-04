@@ -1,0 +1,114 @@
+type Query {
+  count(
+    recordTypeName: String!
+    filtrationFlags: FiltrationFlagsInput
+  ): RequestResult!
+  latestEntries(count: Int!): RequestResult!
+  randomEntries(count: Int!): RequestResult!
+  entries(
+    entryIds: [String!]!
+    filtrationFlags: FiltrationFlagsInput
+  ): RequestResult!
+  find(
+    inputText: String!
+    filtrationFlags: FiltrationFlagsInput
+  ): RequestResult!
+}
+
+type Mutation {
+  addSound(pronunciation: PronunciationDtoInput!): RequestResult!
+  promote(recordTypeName: String!, entryId: String!): RequestResult!
+  addEntry(entryDto: EntryDtoInput!): RequestResult!
+  updateEntry(entryDto: EntryDtoInput!): RequestResult!
+  removeEntry(entryId: String!): RequestResult!
+  updatePassword(
+    email: String!
+    token: String!
+    newPassword: String!
+  ): RequestResult!
+  passwordReset(email: String!): RequestResult!
+  refreshTokens(accessToken: String!, refreshToken: String!): RequestResult!
+  loginEmailPassword(email: String!, password: String!): RequestResult!
+  confirmEmail(token: String!): RequestResult!
+  registerUser(
+    email: String!
+    password: String!
+    firstName: String
+    lastName: String
+    patronymic: String
+  ): RequestResult!
+  bearerToken: String!
+}
+
+input FiltrationFlagsInput {
+  entryFilters: EntryFiltersInput
+  translationFilters: TranslationFiltersInput
+}
+
+type RequestResult {
+  success: Boolean!
+  serializedData: String
+  errorMessage: String!
+}
+
+input PronunciationDtoInput {
+  soundId: String!
+  fileName: String!
+  entryId: String!
+  userId: String!
+  recordingB64: String
+  rate: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input EntryDtoInput {
+  entryId: String!
+  userId: String
+  sourceId: String!
+  parentEntryId: String
+  rate: Int!
+  content: String!
+  details: String
+  type: Int!
+  subtype: Int!
+  subEntries: [EntryDtoInput!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  translations: [TranslationDtoInput!]!
+  sounds: [PronunciationDtoInput!]!
+}
+
+input TranslationDtoInput {
+  userId: String!
+  entryId: String!
+  languageCode: String!
+  content: String!
+  rate: Int!
+  translationId: String!
+  notes: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""
+The `DateTime` scalar represents an ISO-8601 compliant date time type.
+"""
+scalar DateTime @specifiedBy(url: "https://www.graphql-scalars.com/date-time")
+
+input TranslationFiltersInput {
+  includeOnModeration: Boolean
+  languageCodes: [String!]
+}
+
+input EntryFiltersInput {
+  startsWith: String
+  includeOnModeration: Boolean
+  entryTypes: [EntryType!]
+}
+
+enum EntryType {
+  WORD
+  PHRASE
+  TEXT
+}
