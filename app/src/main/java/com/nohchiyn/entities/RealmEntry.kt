@@ -30,7 +30,7 @@ open class RealmEntry() : RealmObject {
     var Translations: RealmList<RealmTranslation> = realmListOf()
     var SubEntries: RealmList<RealmEntry> = realmListOf()
 
-    fun GetSource(): String? {
+    fun GetSource(): String {
         val sourceTitle: String? = when (Source?.Name) {
             "Maciev" -> "Чеченско - русский словарь, А.Г.Мациева"
             "Karasaev" -> "Русско - чеченский словарь, Карасаев А.Т., Мациев А.Г."
@@ -40,6 +40,6 @@ open class RealmEntry() : RealmObject {
             "ikhasakhanov" -> "Ислам Хасаханов"
             else -> null
         }
-        return sourceTitle
+        return sourceTitle ?: ""
     }
 }

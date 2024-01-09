@@ -10,8 +10,18 @@ import com.nohchiyn.entities.RealmEntry
 import com.nohchiyn.entities.RealmTranslation
 
 sealed class EntryItem {
-    data class Entry(val realmEntry: RealmEntry) : EntryItem()
-    data class Translation(val realmTranslation: RealmTranslation) : EntryItem()
+    data class Entry(
+        val entryContent: String,
+        val entrySource: String,
+        val entryForms: String,
+        val translations: List<Translation>
+    ) : EntryItem()
+
+    data class Translation(
+        val translationContent: String,
+        val translationLanguageCode: String,
+        val translationNotes: String
+    ) : EntryItem()
 }
 
 class EntriesAdapter(private val dataList: List<EntryItem>) :
@@ -68,16 +78,12 @@ class EntriesAdapter(private val dataList: List<EntryItem>) :
         private val tvPhrase: TextView = view.findViewById(R.id.tvPhrase)
         private val tvForms: TextView = view.findViewById(R.id.tvForms)
 
-
         fun bind(item: EntryItem.Entry) {
-            tvSource.text = item.realmEntry.GetSource()
-            tvPhrase.setText(item.realmEntry.Content)
+            tvSource.text = item.entrySource
+            tvPhrase.text = item.entryContent
 
-            if (item.realmEntry.SubEntries.count() > 0) {
-                val forms = item.realmEntry.SubEntries.map { it -> it.Content }
-                    .joinToString(separator = ", ")
-                val spannableString = "[ ${forms} ]"
-                tvForms.setText(spannableString)
+            if (item.entryForms.length > 0) {
+                tvForms.text = item.entryForms
             } else {
                 tvForms.visibility = View.GONE
             }
@@ -90,19 +96,11 @@ class EntriesAdapter(private val dataList: List<EntryItem>) :
         private val tvLanguage: TextView = view.findViewById(R.id.tvExpChildLg)
 
         fun bind(item: EntryItem.Translation) {
-            val spannableString = SpannableString(item.realmTranslation.Content)
-            spannableString.setSpan(
-                LeadingMarginSpan.Standard(100, 0),
-                0,
-                item.realmTranslation.Content!!.length,
-                0
-            )
+            tvTranslation.text = item.translationContent
+            tvLanguage.text = item.translationLanguageCode
 
-            tvTranslation.setText(spannableString)
-            tvLanguage.setText(item.realmTranslation.LanguageCode)
-
-            if (item.realmTranslation.Notes != null && item.realmTranslation.Notes!!.length > 0) {
-                tvTranslationNotes.text = item.realmTranslation.Notes
+            if (item.translationNotes.length > 0) {
+                tvTranslationNotes.text = item.translationNotes
                 tvTranslationNotes.visibility = View.VISIBLE;
             }
         }

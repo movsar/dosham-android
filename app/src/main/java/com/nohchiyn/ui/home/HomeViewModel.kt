@@ -1,6 +1,9 @@
 package com.nohchiyn.ui.home
 
 import EntryItem
+import android.text.SpannableString
+import android.text.style.LeadingMarginSpan
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,11 +27,36 @@ class HomeViewModel : ViewModel() {
 
     fun setEntries(realmEntries: List<RealmEntry>) {
         val flatList = mutableListOf<EntryItem>()
+
         realmEntries.forEach { entry ->
-            flatList.add(EntryItem.Entry(entry))
-            entry.Translations.forEach { translation ->
-                flatList.add(EntryItem.Translation(translation))
+            val translations = entry.Translations.map { translation ->
+
+                val spannableString = SpannableString(translation.Content)
+                spannableString.setSpan(
+                    LeadingMarginSpan.Standard(100, 0),
+                    0,
+                    translation.Content!!.length,
+                    0
+                )
+
+                EntryItem.Translation(
+                    translationContent = spannableString.toString(),
+                    translationLanguageCode = translation.LanguageCode!!,
+                    translationNotes = translation.Notes ?: ""
+                )
             }
+
+            val forms = entry.SubEntries.map { it -> it.Content }
+                .joinToString(separator = ", ")
+
+            flatList.add(
+                EntryItem.Entry(
+                    entryContent = entry.Content!!,
+                    entrySource = entry.GetSource(),
+                    entryForms = if (forms.length > 0) "[ ${forms} ]" else "",
+                    translations = translations
+                )
+            )
         }
         _entries.postValue(flatList)
     }
