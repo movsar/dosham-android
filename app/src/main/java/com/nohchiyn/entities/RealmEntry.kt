@@ -28,6 +28,7 @@ open class RealmEntry() : RealmObject {
     var UpdatedAt: Long = 0
     var Sounds: RealmList<RealmSound> = realmListOf()
     var Translations: RealmList<RealmTranslation> = realmListOf()
+    var SubEntries: RealmList<RealmEntry> = realmListOf()
 
     fun GetSource(): String? {
         val sourceTitle: String? = when (Source?.Name) {

@@ -19,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/tvSource"
         android:layout_width="0dp"
@@ -28,6 +27,17 @@
         android:textSize="@dimen/m_textsize"
         android:textColor="@color/custom_color_grey"
         app:layout_constraintTop_toBottomOf="@id/tvPhrase"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvForms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="forms"
+        android:textSize="@dimen/m_textsize"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvSource"
         app:layout_constraintStart_toStartOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

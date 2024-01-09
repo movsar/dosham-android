@@ -24,7 +24,7 @@ object RealmService {
                 RealmTranslation::class
             )
         )
-            .schemaVersion(18)
+            .schemaVersion(19)
             .directory(context.filesDir.absolutePath + "/database")
             .name("local.datx")
             .build()

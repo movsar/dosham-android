@@ -66,11 +66,21 @@ class EntriesAdapter(private val dataList: List<EntryItem>) :
     class EntryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val tvSource: TextView = view.findViewById(R.id.tvSource)
         private val tvPhrase: TextView = view.findViewById(R.id.tvPhrase)
+        private val tvForms: TextView = view.findViewById(R.id.tvForms)
 
 
         fun bind(item: EntryItem.Entry) {
             tvSource.text = item.realmEntry.GetSource()
             tvPhrase.setText(item.realmEntry.Content)
+
+            if (item.realmEntry.SubEntries.count() > 0) {
+                val forms = item.realmEntry.SubEntries.map { it -> it.Content }
+                    .joinToString(separator = ", ")
+                val spannableString = "[ ${forms} ]"
+                tvForms.setText(spannableString)
+            } else {
+                tvForms.visibility = View.GONE
+            }
         }
     }
 
@@ -91,7 +101,7 @@ class EntriesAdapter(private val dataList: List<EntryItem>) :
             tvTranslation.setText(spannableString)
             tvLanguage.setText(item.realmTranslation.LanguageCode)
 
-            if (item.realmTranslation.Notes != null && item.realmTranslation.Notes!!.length > 0){
+            if (item.realmTranslation.Notes != null && item.realmTranslation.Notes!!.length > 0) {
                 tvTranslationNotes.text = item.realmTranslation.Notes
                 tvTranslationNotes.visibility = View.VISIBLE;
             }
