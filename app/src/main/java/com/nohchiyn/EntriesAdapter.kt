@@ -14,7 +14,6 @@ sealed class EntryItem {
         val entryContent: String,
         val entrySource: String,
         val entryForms: String,
-        val translations: List<Translation>
     ) : EntryItem()
 
     data class Translation(
@@ -96,7 +95,15 @@ class EntriesAdapter(private val dataList: List<EntryItem>) :
         private val tvLanguage: TextView = view.findViewById(R.id.tvExpChildLg)
 
         fun bind(item: EntryItem.Translation) {
-            tvTranslation.text = item.translationContent
+            val spannableString = SpannableString(item.translationContent)
+            spannableString.setSpan(
+                LeadingMarginSpan.Standard(100, 0),
+                0,
+                item.translationContent.length,
+                0
+            )
+
+            tvTranslation.setText(spannableString)
             tvLanguage.text = item.translationLanguageCode
 
             if (item.translationNotes.length > 0) {

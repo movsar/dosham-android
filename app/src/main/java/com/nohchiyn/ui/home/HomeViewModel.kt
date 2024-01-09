@@ -1,20 +1,13 @@
 package com.nohchiyn.ui.home
 
 import EntryItem
-import android.text.SpannableString
-import android.text.style.LeadingMarginSpan
-import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nohchiyn.entities.RealmEntry
-import com.nohchiyn.entities.RealmTranslation
 import com.nohchiyn.services.RealmService
 import io.realm.kotlin.Realm
 import io.realm.kotlin.ext.query
-import io.realm.kotlin.query.RealmQuery
-import io.realm.kotlin.query.RealmResults
-import io.realm.kotlin.query.find
 import java.util.Random
 
 
@@ -26,37 +19,52 @@ class HomeViewModel : ViewModel() {
     val entries: LiveData<List<EntryItem>> = _entries
 
     fun setEntries(realmEntries: List<RealmEntry>) {
+        val combinedEntries = mutableListOf<RealmEntry>()
+
+        // Filter subEntries that have a ParentEntryId
+        val subEntries = realmEntries.filter { it.ParentEntryId != null }
+
+        // Add all entries that are not sub-entries to the combinedEntries list
+        combinedEntries.addAll(realmEntries.filter { it.ParentEntryId == null })
+
+        // If there are subEntries, process them
+        if (subEntries.isNotEmpty()) {
+            // Prepare the IN clause with unique ParentEntryIds
+            val parentEntryIds = subEntries.mapNotNull { it.ParentEntryId }.distinct()
+            val inStatement =
+                parentEntryIds.joinToString(separator = "', '", prefix = "'", postfix = "'")
+
+            // Query to find parent entries
+            val query = "EntryId IN {$inStatement}"
+            val parents = realm.query(RealmEntry::class, query).find()
+
+            combinedEntries.addAll(parents)
+        }
+
         val flatList = mutableListOf<EntryItem>()
 
-        realmEntries.forEach { entry ->
-            val translations = entry.Translations.map { translation ->
-
-                val spannableString = SpannableString(translation.Content)
-                spannableString.setSpan(
-                    LeadingMarginSpan.Standard(100, 0),
-                    0,
-                    translation.Content!!.length,
-                    0
-                )
-
-                EntryItem.Translation(
-                    translationContent = spannableString.toString(),
-                    translationLanguageCode = translation.LanguageCode!!,
-                    translationNotes = translation.Notes ?: ""
-                )
-            }
-
+        combinedEntries.filter { e -> e.ParentEntryId == null }.forEach { entry ->
+            // Add the entry itself
             val forms = entry.SubEntries.map { it -> it.Content }
                 .joinToString(separator = ", ")
-
             flatList.add(
                 EntryItem.Entry(
                     entryContent = entry.Content!!,
                     entrySource = entry.GetSource(),
-                    entryForms = if (forms.length > 0) "[ ${forms} ]" else "",
-                    translations = translations
+                    entryForms = if (forms.isNotEmpty()) "[ $forms ]" else "",
                 )
             )
+
+            // Add translations of the entry
+            entry.Translations.forEach { translation ->
+                flatList.add(
+                    EntryItem.Translation(
+                        translationContent = translation.Content!!,
+                        translationLanguageCode = translation.LanguageCode!!,
+                        translationNotes = translation.Notes ?: ""
+                    )
+                )
+            }
         }
         _entries.postValue(flatList)
     }
@@ -78,7 +86,7 @@ class HomeViewModel : ViewModel() {
         val random = Random()
         for (i in 1..numberOfEntries) {
             val randomIndex = random.nextInt(totalEntries)
-            realm.query(RealmEntry::class).find()?.let {
+            realm.query(RealmEntry::class, "ParentEntryId = null").find()?.let {
                 if (it.size > randomIndex) {
                     results.add(it[randomIndex])
                 }
@@ -101,30 +109,32 @@ class HomeViewModel : ViewModel() {
         val fromRate = 0;
         val limitBy = 100;
 
-        // StartsWith for Entry
-        val entryStartsWithResults: List<RealmEntry> =
-            realm.query<RealmEntry>("RawContents LIKE [c] '${searchText}*' AND Rate > ${fromRate} LIMIT (${limitBy})")
-                .find()
-                .sortedBy { it.RawContents }
+        val entryStartsWithQuery = "RawContents LIKE [c] '${searchText}*' AND Rate > ${fromRate}"
+        val translationStartsWithQuery = "SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0 LIMIT (${limitBy})"
+        val containsQuery = "(RawContents LIKE [c] '*${searchText}*' AND Rate > ${fromRate}) OR (SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '*${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0) LIMIT (${limitBy})"
 
-        setEntries(entryStartsWithResults)
-
-        // StartsWith for Translation
-        val translationStartsWithResults =
-            realm.query<RealmEntry>("SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0 LIMIT (${limitBy})")
-                .find()
-
-        setEntries(entryStartsWithResults + translationStartsWithResults)
-
-        if (searchText.length > 4) {
-            val containsResults =
-                realm.query<RealmEntry>("(RawContents LIKE [c] '*${searchText}*' AND Rate > ${fromRate}) OR (SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '*${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0) LIMIT (${limitBy})")
+        if (searchText.length < 3) {
+            // StartsWith for Entry
+            val entryStartsWithResults: List<RealmEntry> =
+                realm.query<RealmEntry>("$entryStartsWithQuery LIMIT (${limitBy})")
                     .find()
-                    .filterNot { it in entryStartsWithResults }
-                    .filterNot { it in translationStartsWithResults }
                     .sortedBy { it.RawContents }
 
-            setEntries(entryStartsWithResults + translationStartsWithResults + containsResults);
+            setEntries(entryStartsWithResults)
+        } else if (searchText.length < 6) {
+            // StartsWith for Translation
+            val entryOrTranslationStartsWithResults =
+                realm.query<RealmEntry>("$entryStartsWithQuery OR $translationStartsWithQuery")
+                    .find()
+            setEntries(entryOrTranslationStartsWithResults)
+        } else {
+            // Contains
+            val containsResults =
+                realm.query<RealmEntry>(containsQuery)
+                    .find()
+                    .sortedBy { it.RawContents }
+
+            setEntries(containsResults);
         }
 
     }
