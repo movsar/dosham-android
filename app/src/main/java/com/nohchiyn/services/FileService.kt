@@ -2,6 +2,7 @@ package com.nohchiyn.services
 
 import android.content.Context
 import com.nohchiyn.R
+import okio.Path
 import java.io.BufferedOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -13,17 +14,27 @@ import java.nio.file.attribute.PosixFilePermissions
 import java.util.zip.ZipFile
 
 class FileService(private val context: Context) {
-    fun setPermissions(filePath: String){
+    fun setPermissions(filePath: String) {
         val path = Paths.get(filePath)
         Files.setPosixFilePermissions(path, PosixFilePermissions.fromString("rwxrwxrwx"))
     }
+
+    val SCHEMA_19_ZIP_LENGTH: Long = 12304333
     fun deployLocalDatabase() {
         val zipfileName = "data.zip";
         val dbFileName = "local.datx";
 
-        val zipFile = File(context.filesDir, zipfileName);
-        val dbFile = File(context.filesDir, dbFileName);
-        if (dbFile.exists() && zipFile.exists()) {
+        val zipFile = File(context.filesDir.absolutePath, zipfileName);
+        val zipFileLength = zipFile.length();
+
+        val isZipSizeCorrect = zipFileLength == SCHEMA_19_ZIP_LENGTH;
+
+        val dbFile = File(context.filesDir.absolutePath + Path.Companion.DIRECTORY_SEPARATOR + "database", dbFileName);
+
+        val dbFileExists = dbFile.exists()
+        val zipFileExists = zipFile.exists()
+
+        if (dbFileExists && zipFileExists && isZipSizeCorrect) {
             return;
         }
 

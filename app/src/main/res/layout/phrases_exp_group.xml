@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-
     <TextView
         android:id="@+id/tvPhrase"
         style="?attr/tv_original_textstyle"
@@ -15,6 +14,7 @@
         android:text="phrase"
         android:textSize="@dimen/n_textsize"
         android:layout_marginTop="8dp"
+        android:textColor="#6784AF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

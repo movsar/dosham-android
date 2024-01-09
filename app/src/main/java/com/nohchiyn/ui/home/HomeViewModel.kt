@@ -113,29 +113,28 @@ class HomeViewModel : ViewModel() {
         val translationStartsWithQuery = "SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0 LIMIT (${limitBy})"
         val containsQuery = "(RawContents LIKE [c] '*${searchText}*' AND Rate > ${fromRate}) OR (SUBQUERY(Translations, \$translation, \$translation.RawContents LIKE [c] '*${searchText}*' AND \$translation.Rate > ${fromRate}).@count > 0) LIMIT (${limitBy})"
 
-        if (searchText.length < 3) {
-            // StartsWith for Entry
-            val entryStartsWithResults: List<RealmEntry> =
-                realm.query<RealmEntry>("$entryStartsWithQuery LIMIT (${limitBy})")
-                    .find()
-                    .sortedBy { it.RawContents }
-
-            setEntries(entryStartsWithResults)
-        } else if (searchText.length < 6) {
-            // StartsWith for Translation
-            val entryOrTranslationStartsWithResults =
-                realm.query<RealmEntry>("$entryStartsWithQuery OR $translationStartsWithQuery")
-                    .find()
-            setEntries(entryOrTranslationStartsWithResults)
-        } else {
-            // Contains
-            val containsResults =
-                realm.query<RealmEntry>(containsQuery)
-                    .find()
-                    .sortedBy { it.RawContents }
-
-            setEntries(containsResults);
+        val results = when {
+            searchText.length < 3 -> {
+                // StartsWith for Entry
+                realm.query<RealmEntry>("$entryStartsWithQuery LIMIT ($limitBy)").find()
+            }
+            searchText.length < 6 -> {
+                // StartsWith for Translation
+                realm.query<RealmEntry>("$entryStartsWithQuery OR $translationStartsWithQuery").find()
+            }
+            else -> {
+                // Contains
+                realm.query<RealmEntry>(containsQuery).find()
+            }
         }
 
+        // Custom sorting logic
+        val sortedResults = results.sortedWith(compareBy<RealmEntry> {
+            !it.RawContents!!.startsWith(searchText, ignoreCase = true)
+        }.thenBy {
+            it.RawContents!!.length
+        })
+
+        setEntries(sortedResults)
     }
 }
