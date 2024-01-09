@@ -49,7 +49,7 @@ class HomeViewModel : ViewModel() {
                 .joinToString(separator = ", ")
             flatList.add(
                 EntryItem.Entry(
-                    entryContent = entry.Content!!,
+                    entryContent = entry.Content!!.replaceFirstChar { c->c.titlecaseChar() },
                     entrySource = entry.GetSource(),
                     entryForms = if (forms.isNotEmpty()) "[ $forms ]" else "",
                 )

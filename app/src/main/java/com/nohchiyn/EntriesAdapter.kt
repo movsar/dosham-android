@@ -97,7 +97,7 @@ class EntriesAdapter(private val dataList: List<EntryItem>) :
         fun bind(item: EntryItem.Translation) {
             val spannableString = SpannableString(item.translationContent)
             spannableString.setSpan(
-                LeadingMarginSpan.Standard(100, 0),
+                LeadingMarginSpan.Standard(90, 0),
                 0,
                 item.translationContent.length,
                 0
