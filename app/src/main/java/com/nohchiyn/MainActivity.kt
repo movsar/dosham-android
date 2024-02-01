@@ -11,16 +11,8 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.nohchiyn.databinding.ActivityMainBinding
-import com.nohchiyn.entities.RealmChangeSet
-import com.nohchiyn.entities.RealmEntry
-import com.nohchiyn.entities.RealmSound
-import com.nohchiyn.entities.RealmSource
-import com.nohchiyn.entities.RealmTranslation
-import com.nohchiyn.entities.RealmUser
 import com.nohchiyn.services.FileService
 import com.nohchiyn.services.RealmService
-import io.realm.kotlin.Realm
-import io.realm.kotlin.RealmConfiguration
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,31 +21,35 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fileService: FileService
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate(null)
 
-        // First time initialization
-        fileService = FileService(this);
-        fileService.deployLocalDatabase();
-        RealmService.init(this);
+        try{
+            // First time initialization
+            fileService = FileService(this);
+            fileService.deployLocalDatabase();
+            RealmService.init(this);
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+            binding = ActivityMainBinding.inflate(layoutInflater)
+            setContentView(binding.root)
 
-        setSupportActionBar(binding.appBarMain.toolbar)
+            setSupportActionBar(binding.appBarMain.toolbar)
 
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+            val drawerLayout: DrawerLayout = binding.drawerLayout
+            val navView: NavigationView = binding.navView
+            val navController = findNavController(R.id.nav_host_fragment_content_main)
 
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_alphabet
-            ), drawerLayout
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+            // Passing each menu ID as a set of Ids because each
+            // menu should be considered as top level destinations.
+            appBarConfiguration = AppBarConfiguration(
+                setOf(
+                    R.id.nav_home, R.id.nav_alphabet
+                ), drawerLayout
+            )
+            setupActionBarWithNavController(navController, appBarConfiguration)
+            navView.setupWithNavController(navController)
+        }catch (ex: Exception){
+            throw Exception("Something went weird", ex);
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
